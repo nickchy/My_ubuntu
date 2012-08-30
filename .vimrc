@@ -735,7 +735,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    if MySys() == "windows"
      let Tlist_Ctags_Cmd = 'ctags'
    elseif MySys() == "linux"
-     let Tlist_Ctags_Cmd = '/bin/ctags'
+     let Tlist_Ctags_Cmd = '/usr/bin/ctags'
    endif
      let g:Tlist_Show_One_File = 1
      let Tlist_Exit_OnlyWindow = 1
