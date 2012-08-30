@@ -1,0 +1,63 @@
+This indicator needs to be at the beginning of the file in order to be 
+correctly identified as XPMs.
+
+--- origsrc/libiodbc-3.52.7/iodbcadm/gtk/error.xpm	2009-08-30 05:48:34.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcadm/gtk/error.xpm	2010-06-04 14:08:08.658634600 -0500
+@@ -1,3 +1,4 @@
++/* XPM */
+ /*
+  *  error.xpm
+  *
+@@ -74,7 +75,6 @@
+  *  SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+  */
+ 
+-/* XPM */
+ static char * error_xpm[] = {
+ "48 48 62 1",
+ " 	c None",
+--- origsrc/libiodbc-3.52.7/iodbcadm/gtk/img.xpm	2009-08-30 05:48:34.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcadm/gtk/img.xpm	2010-06-04 14:08:14.130947600 -0500
+@@ -1,3 +1,4 @@
++/* XPM */
+ /*
+  *  img.xpm
+  *
+@@ -75,7 +76,6 @@
+  */
+ 
+ 
+-/* XPM */
+ static char * img_xpm[] = {
+ "117 260 35 1",
+ " 	c None",
+--- origsrc/libiodbc-3.52.7/iodbcadm/gtk/odbc4.xpm	2009-08-30 05:48:34.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcadm/gtk/odbc4.xpm	2010-06-04 14:08:19.570258700 -0500
+@@ -1,3 +1,4 @@
++/* XPM */
+ /*
+  *  odbc4.xpm
+  *
+@@ -75,7 +76,6 @@
+  */
+ 
+ 
+-/* XPM */
+ static char *odbc4_xpm[] =
+ {
+     "32 29 17 1",
+--- origsrc/libiodbc-3.52.7/iodbcadm/gtk/question.xpm	2009-08-30 05:48:34.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcadm/gtk/question.xpm	2010-06-04 14:08:25.594603300 -0500
+@@ -1,3 +1,4 @@
++/* XPM */
+ /*
+  *  question.xpm
+  *
+@@ -75,7 +76,6 @@
+  */
+ 
+ 
+-/* XPM */
+ static char * question_xpm[] = {
+ "32 32 2 1",
+ " 	c None",

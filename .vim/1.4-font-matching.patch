@@ -1,0 +1,15 @@
+http://sourceware.org/bugzilla/show_bug.cgi?id=10948
+
+ modules/om/generic/omGeneric.c |    2 +-
+ 1 files changed, 1 insertions(+), 1 deletions(-)
+--- a/modules/om/generic/omGeneric.c	
++++ a/modules/om/generic/omGeneric.c	
+@@ -841,7 +841,7 @@ parse_omit_name(
+ 	return True;
+ 
+     /* This may mot be needed anymore as XListFonts() takes care of this */
+-    while (num_fields < 12) {
++    if (num_fields < 12) {
+ 	if ((last - buf) > (XLFD_MAX_LEN - 2))
+ 	    return -1;
+ 	*last = '*';

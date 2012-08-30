@@ -1,0 +1,11 @@
+--- origsrc/libiodbc-3.52.7/iodbcadm/Makefile.am	2009-09-09 17:01:16.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcadm/Makefile.am	2010-06-04 14:15:42.033566100 -0500
+@@ -118,7 +119,7 @@ libiodbcadm_la_SOURCES	= \
+ iodbcadm_gtk_SOURCES	=
+ iodbcadm_gtk_LDADD	= \
+ 	../iodbcadm/gtk/main.lo \
+-	../iodbcadm/libiodbcadm.la \
++	libiodbcadm.la \
+ 	../iodbcinst/libiodbcinst.la \
+ 	../iodbc/libiodbc.la \
+ 	@GTK_LIBS@

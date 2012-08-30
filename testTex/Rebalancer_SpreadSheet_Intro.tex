@@ -1,0 +1,105 @@
+\documentclass[12pt,letterpaper,twoside]{article}
+\usepackage[dvips]{graphics}
+ \usepackage{multirow}
+\usepackage[hmargin={0.8in,0.8in}]{geometry}
+\usepackage{amscd, epsfig,amssymb,euscript,subfigure}
+ \usepackage{amsmath}
+\usepackage{listings}
+\lstset{
+   basicstyle=6pt,                   % the size of the fonts that are used for the code
+   numbers=left,                           % where to put the line-numbers
+   numberstyle=\footnotesize,            % the size of the fonts that are used for the line-numbers
+   stepnumber=1,                            % the step between two line-numbers. If it's 1 each line will be numbered
+   numbersep=6pt,                        % how far the line-numbers are from the code
+%   backgroundcolor=\color{white},     % choose the background color. You must add \usepackage{color}
+   showspaces=false,                     % show spaces adding particular underscores
+   showstringspaces=false,               % underline spaces within strings
+   showtabs=false,                          % show tabs within strings adding particular underscores
+   frame=single,                            % adds a frame around the code
+%   tabsize=2,                            % sets default tabsize to 2 spaces
+%   captionpos=b,                            % sets the caption-position to bottom
+   breaklines=true,                         % sets automatic line breaking
+   breakatwhitespace=false,              % sets if automatic breaks should only happen at whitespace
+   escapeinside={\%*}{*)},                % if you want to add a comment within your code
+extendedchars=false,
+}
+\usepackage{subfig}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{tikz}
+\usepackage{graphicx}
+\usepackage{color}
+
+\begin{document}
+\title{How to Run Dynamic\_Rebalancer}
+ \author{Nick Yang Cai}
+\date{\today}
+\maketitle
+\medskip
+\medskip
+\medskip
+\tableofcontents  % Write out the Table of Contents
+
+\newpage
+
+\section{Introduction}
+This document is a guide of how to use the Dynamic rebalance spreadsheet.
+\subsection{Files and folders needed}
+In order to run the spreadsheet, the folder listed below will be used during rebalance
+\begin{itemize}
+  \item Rebalancer spreadsheet('Dynamic\_long\_Rebalancer\_V7(withTrim).xls',for example)
+  \item \emph{Review\_List} folder is used to store the buy\_sell review list which will be sent out for fundamental reviewing. The name pattern of review list is like 'Buy\_Sell\_List\_5000.xls'(for dynamic long). In the folder, there are pre-made template spreadsheet for Dynamic Long, Dynamic Short, and Div\_large Short accounts.
+  \item \emph{Order\_list} folder is used to store the final order list which will later been sent out to CRD. The order files are in CSV format and named in the pattern of 'Dynamic\_LongYYYYMMDD.csv'
+  \item After generating orders, the normal rebalance process is finished. However, the backup screen(which contains all the rows in the FactSet screen) of this rebalance need to be downloaded and saved into \emph{long\_short\_Universe} folder.
+  \item \emph{BuyUniverse} stores the tool to generate the BuySell list for Dynamic and will automatically attach the generated file and send to Data Quality Group.
+\end{itemize}
+\section{Rebalance Process}
+\paragraph{}The rebalancer follows an adjusted\_BuyUniverse\_Capweighted methodology. The list below shows the detail steps during the rebalance. We will discuss each of the steps above in details in the follow sections.
+\begin{enumerate}
+  \item Open the rebalancer spreadsheet and download related FactSet screens(section \ref{download})
+  \item Create Buy\_Sell\_Hold list and save into template for reviewing(section \ref{buysell})
+  \item Adjust the Buy\_Sell\_Hold list based on the rejection from fundamental review(section \ref{adj})
+  \item Run weights optimization and check the final portfolio(section \ref{opt})
+  \item Generate orders and create order list(section \ref{order})
+\end{enumerate}
+
+\paragraph{}We will now review and explain each step in detail. In this guide, we will use Dynamic Long spreadsheet as example, other rebalancer follow the same steps with slightly difference, which will also be covered. 
+
+\subsection{Open rebalancer and download FactSet screen}\label{download}
+\paragraph{}The Spreadsheet name of Dynamic Long accounts is 'Dynamic\_long\_Rebalancer\_V7(withTrim).xls' Open the spreadsheet, go to 'Main' tab. There are a list of buttons in that tab. Find the button 'Step 1 Download Screen Universe and Portfolio data' and click the button, the downloading process will start. After downloading process finished, the tabs listed below should be updated.
+\begin{enumerate}
+\item \textbf{Portfolio Holding 5000 \& 5001}
+\item \textbf{Portfolio Holding 5701}
+\item \textbf{Weighting Method}
+\item \textbf{RV1000}
+\item \textbf{Screen Universe}
+\end{enumerate}
+
+\subsection{Cash Target Weight and Cash Tolerance}\label{buysell}
+\paragraph{Generate Buy/Sell/Hold List}
+After downloading all the data needed from Factset, go to the 'Main' tab again.Then click button 'Step 2.1 Generate Buy\_Sell\_Hold List', which will call function to generate Buy and Sell list and after function complete, spreadsheet will jump to tab 'Buy Sell Hold Adjustment' where stores the lists
+\paragraph{Buy and sell List} have three columns which are
+\begin{enumerate}
+  \item Buy Type('Existing Buy','New Buy',etc)
+  \item Company Name
+  \item Approval, which are dropdown list where you can select '\emph{Approve}' or '\emph{Reject}', only the stocks labeled as '\emph{Approve}' will be included in optimization step.
+\end{enumerate}
+\textbf{Hold universe} just has one column where stores the tickers.
+\paragraph{} After checking the lists, go back to 'Main' tab and hit 'Generate Review List' button, which will copy the lists in 'Buy Sell Hold Adjustment' tab into a pre-build template file in \emph{Review\_List} folder. Send out the file for fundamental reviewing.
+
+\subsection{Adjust Buy\_Sell List based on Fundamental Review }\label{adj}
+\paragraph{} After receiving the reviewed list, save the list into \emph{'long\_short\_Universe'} folder with the name in the format of {\color{blue}'yyyymmdd\_Buy\_Sell\_list\_5000.xls'}.
+\paragraph{} Then go to 'Buy Sell Hold Adjustment' tab and reject the corresponding names as in the review list. If ever need to modify the Buy and Sell list(need to change from {\color{cyan}Hold} to {\color{green}Buy} for example, please copy and paste to overwrite the existing data, {\color{red}DO NOT} drag the cells up to overwrite since it will mess up the formula.
+
+
+\subsection{Run weights Optimization}\label{opt}
+\paragraph{}Go to tab 'main' and click button 'Step 2.2 Weights Optimization', the rebalancer will calculate the weights and update the results in tab 'Final Updated Portfolios Check'. {\color{blue}Before running optimization, please go to 'Tool' $\rightarrow$ 'Option' $\rightarrow$ 'Calculation' tab to make sure the {\color{red}Iteration} box is checked.}
+\subsection{Generate Orders}\label{order}
+\paragraph{}Go to 'Main' tab and hit button 'Step 2.3 Generate Order List for all portfolio accounts' will generate order list and jump to 'Order' tab for review, then go to 'Main' again to click button 'Step 3 Generate CRD Format CSV Files'. By doing that, an order file named 'Dynamic\_Longyyyymmdd.csv' will be generated in folder 'Order\_List'.
+\subsection{Save Spreadsheet}
+Please be sure to save the spreadsheet before leaving, since the long spreadsheet will be used in short rebalancer later.
+\section{Short Rebalancer}\label{short}
+\paragraph{}Short Rebalancer follow the exactly the same rule as Long part. One thing need to be point out is that before running Dynamic Short rebalancer, user need to save the whole Dynamic Long spreadsheet first.
+
+\section{Generate Backup Screens}
+Last but not least, Go to 'BuyUniverse' folder open 'BuyUniversegenerator.xls' spreadsheet. First click 'Generate BuyUniverse' button, after the first Macro finished, click 'Send BuyUniverse' this will send the universe list to Data Quality Group. If there is messagebox jump out to ask approval for sending out email, Wait and click yes.
+\end{document}

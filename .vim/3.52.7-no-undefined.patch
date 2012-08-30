@@ -1,0 +1,48 @@
+--- origsrc/libiodbc-3.52.7/drvproxy/drvproxy.exp	2003-09-07 08:38:38.000000000 -0500
++++ src/libiodbc-3.52.7/drvproxy/drvproxy.exp	2010-04-26 19:46:53.171331600 -0500
+@@ -1,5 +1,4 @@
+ ConfigDriver
+ ConfigDSN
+ _iodbcdm_drvconn_dialbox
+-_iodbcdm_loginbox
+ iodbcproxy_version
+--- origsrc/libiodbc-3.52.7/drvproxy/Makefile.am	2009-09-09 17:01:16.000000000 -0500
++++ src/libiodbc-3.52.7/drvproxy/Makefile.am	2010-06-04 13:36:25.800797300 -0500
+@@ -92,6 +92,7 @@ INCLUDES		= \
+ endif
+ 
+ libdrvproxy_la_LDFLAGS	= -version-info @lib_version@ \
++			  -module -no-undefined \
+ 			  -export-symbols $(srcdir)/drvproxy.exp
+ 
+ if GTK
+--- origsrc/libiodbc-3.52.7/iodbc/Makefile.am	2009-09-09 17:01:16.000000000 -0500
++++ src/libiodbc-3.52.7/iodbc/Makefile.am	2010-04-26 19:14:12.728200700 -0500
+@@ -79,6 +79,7 @@ INCLUDES		= -I$(top_srcdir)/include -I$(
+ lib_LTLIBRARIES		= libiodbc.la
+ 
+ libiodbc_la_LDFLAGS	= -version-info @lib_version@ \
++	                  -no-undefined \
+ 	                  -export-symbols $(srcdir)/iodbc.exp
+ libiodbc_la_LIBADD	= trace/libiodbctrace.la \
+ 			  ../iodbcinst/libiodbc_common.la \
+--- origsrc/libiodbc-3.52.7/iodbcadm/Makefile.am	2009-09-09 17:01:16.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcadm/Makefile.am	2010-06-04 14:15:42.033566100 -0500
+@@ -92,6 +92,7 @@ endif
+ 
+ libiodbcadm_la_LDFLAGS	= \
+ 	-version-info @lib_version@ \
++	-no-undefined \
+ 	-export-symbols $(srcdir)/iodbcadm.exp
+ 
+ if GTK
+--- origsrc/libiodbc-3.52.7/iodbcinst/Makefile.am	2009-09-09 17:01:16.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcinst/Makefile.am	2010-04-26 19:13:51.887008600 -0500
+@@ -94,6 +94,7 @@ libiodbc_common_la_SOURCES	= \
+ 	unicode.c
+ 
+ libiodbcinst_la_LDFLAGS	= -version-info @lib_version@ \
++			  -no-undefined \
+ 			  -export-symbols $(srcdir)/iodbcinst.exp
+ 
+ libiodbcinst_la_LIBADD	= libiodbc_common.la $(LIBADD_DL)

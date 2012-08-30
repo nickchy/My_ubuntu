@@ -1,0 +1,49 @@
+<+	+>	!comp!	!exe!
+%        File: !comp!expand("%")!comp!
+%     Created: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+% Last Change: !comp!strftime("%a %b %d %I:00 %p %Y ").substitute(strftime('%Z'), '\<\(\w\)\(\w*\)\>\(\W\|$\)', '\1', 'g')!comp!
+%
+documentclass[12pt,letterpaper,twoside]{article}
+\usepackage[dvips]{graphics}
+ \usepackage{multirow}
+\usepackage[hmargin={0.8in,0.8in}]{geometry}
+\usepackage{amscd, epsfig,amssymb,euscript,subfigure}
+ \usepackage{amsmath}
+\usepackage{listings}
+\lstset{
+   basicstyle=6pt,                   % the size of the fonts that are used for the code
+   numbers=left,                           % where to put the line-numbers
+   numberstyle=\footnotesize,            % the size of the fonts that are used for the line-numbers
+   stepnumber=1,                            % the step between two line-numbers. If it's 1 each line will be numbered
+   numbersep=6pt,                        % how far the line-numbers are from the code
+%   backgroundcolor=\color{white},     % choose the background color. You must add \usepackage{color}
+   showspaces=false,                     % show spaces adding particular underscores
+   showstringspaces=false,               % underline spaces within strings
+   showtabs=false,                          % show tabs within strings adding particular underscores
+   frame=single,                            % adds a frame around the code
+%   tabsize=2,                            % sets default tabsize to 2 spaces
+%   captionpos=b,                            % sets the caption-position to bottom
+   breaklines=true,                         % sets automatic line breaking
+   breakatwhitespace=false,              % sets if automatic breaks should only happen at whitespace
+   escapeinside={\%*}{*)},                % if you want to add a comment within your code
+extendedchars=false,
+}
+\usepackage{subfig}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Div\_Rebalancer Reference}
+ \author{Nick Yang Cai}
+ \date{\today}
+\maketitle
+\medskip
+\medskip
+\medskip
+\tableofcontents  % Write out the Table of Contents
+
+\newpage
+
+<++>
+\end{document}

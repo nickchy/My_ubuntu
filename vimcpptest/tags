@@ -1,0 +1,490 @@
+	vimcpptest.vim	/^cnoremap  <Home>$/;"	m
+	vimcpptest.vim	/^inoremap  $/;"	m
+	vimcpptest.vim	/^cnoremap  <End>$/;"	m
+	vimcpptest.vim	/^inoremap  $/;"	m
+	vimcpptest.vim	/^nmap  h$/;"	m
+	vimcpptest.vim	/^cnoremap  $/;"	m
+	vimcpptest.vim	/^inoremap <expr>  pumvisible()?"\\<PageUp>\\\\":"\\"$/;"	m
+	vimcpptest.vim	/^nmap  k$/;"	m
+	vimcpptest.vim	/^inoremap  $/;"	m
+	vimcpptest.vim	/^nmap  l$/;"	m
+	vimcpptest.vim	/^inoremap <expr> $/;"	m
+	vimcpptest.vim	/^inoremap <expr>  pumvisible()?"\\":"\\"$/;"	m
+	vimcpptest.vim	/^nmap  :BottomExplorerWindow$/;"	m
+	vimcpptest.vim	/^nmap  :FirstExplorerWindow$/;"	m
+	vimcpptest.vim	/^inoremap  $/;"	m
+<slient>	vimcpptest.vim	/^map <slient> <F9> :TlistToggle$/;"	m
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+#	vimcpptest.vim	/^vnoremap <silent> # :call VisualSearch('b')$/;"	m
+*	vimcpptest.vim	/^inoremap <buffer> <silent> * :silent! %foldopen!$/;"	m
+*	vimcpptest.vim	/^nnoremap <buffer> <silent> * :silent! %foldopen!$/;"	m
+*	vimcpptest.vim	/^vnoremap <silent> * :call VisualSearch('f')$/;"	m
++	vimcpptest.vim	/^inoremap <buffer> <silent> + :silent! foldopen$/;"	m
++	vimcpptest.vim	/^nnoremap <buffer> <silent> + :silent! foldopen$/;"	m
+,	vimcpptest.vim	/^map <buffer> ,  :make$/;"	m
+,	vimcpptest.vim	/^nmap <silent> ,$/;"	m
+,$	vimcpptest.vim	/^map ,$ :syntax sync fromstart$/;"	m
+,1	vimcpptest.vim	/^map ,1 :set syntax=c++$/;"	m
+,2	vimcpptest.vim	/^map ,2 :set syntax=xhtml$/;"	m
+,3	vimcpptest.vim	/^map ,3 :set syntax=python$/;"	m
+,4	vimcpptest.vim	/^map ,4 :set ft=javascript$/;"	m
+,bb	vimcpptest.vim	/^nmap <silent> ,bb :TagbarToggle$/;"	m
+,bd	vimcpptest.vim	/^map ,bd :Bclose$/;"	m
+,cd	vimcpptest.vim	/^map <silent> ,cd :cd %:p:h$/;"	m
+,cn	vimcpptest.vim	/^nmap ,cn :cn$/;"	m
+,cp	vimcpptest.vim	/^nmap ,cp :cp$/;"	m
+,cw	vimcpptest.vim	/^nmap ,cw :cw 10$/;"	m
+,dm	vimcpptest.vim	/^noremap ,dm mzHmx:%s\/$/;"	m
+,ec	vimcpptest.vim	/^map ,ec :tabnew ~\/tmp\/scratch.txt$/;"	m
+,ee	vimcpptest.vim	/^map <silent> ,ee :call SwitchToBuf("~\/.vimrc")$/;"	m
+,es	vimcpptest.vim	/^map ,es :tabnew$/;"	m
+,fd	vimcpptest.vim	/^nmap ,fd :se ff=dos$/;"	m
+,fu	vimcpptest.vim	/^nmap ,fu :se ff=unix$/;"	m
+,hh	vimcpptest.vim	/^nmap <silent> ,hh <Plug>MarkClear$/;"	m
+,hh	vimcpptest.vim	/^vmap <silent> ,hh <Plug>MarkClear$/;"	m
+,hl	vimcpptest.vim	/^nmap <silent> ,hl <Plug>MarkSet$/;"	m
+,hl	vimcpptest.vim	/^vmap <silent> ,hl <Plug>MarkSet$/;"	m
+,hr	vimcpptest.vim	/^nmap <silent> ,hr <Plug>MarkRegex$/;"	m
+,hr	vimcpptest.vim	/^vmap <silent> ,hr <Plug>MarkRegex$/;"	m
+,lk	vimcpptest.vim	/^nmap <silent> ,lk :LUTags$/;"	m
+,ll	vimcpptest.vim	/^nmap <silent> ,ll :LUBufs$/;"	m
+,lv	vimcpptest.vim	/^nmap <silent> ,lv :lv \/=expand("<cword>")$/;"	m
+,lw	vimcpptest.vim	/^nmap <silent> ,lw :LUWalk$/;"	m
+,mk	vimcpptest.vim	/^nmap <silent> ,mk :MarksBrowser$/;"	m
+,of	vimcpptest.vim	/^nmap <silent> ,of :FSHere$/;"	m
+,qa	vimcpptest.vim	/^nmap <silent> ,qa :qa$/;"	m
+,qf	vimcpptest.vim	/^nmap <silent> ,qf :q!$/;"	m
+,qq	vimcpptest.vim	/^nmap <silent> ,qq :q$/;"	m
+,qw	vimcpptest.vim	/^nmap <silent> ,qw :wq$/;"	m
+,rr	vimcpptest.vim	/^nmap <silent> ,rr :redraw!$/;"	m
+,s?	vimcpptest.vim	/^map ,s? z=$/;"	m
+,sa	vimcpptest.vim	/^map ,sa zg$/;"	m
+,sn	vimcpptest.vim	/^map ,sn ]s$/;"	m
+,sp	vimcpptest.vim	/^map ,sp [s$/;"	m
+,ss	vimcpptest.vim	/^map <silent> ,ss :source ~\/.vimrc$/;"	m
+,t2	vimcpptest.vim	/^map ,t2 :set shiftwidth=2$/;"	m
+,t4	vimcpptest.vim	/^map ,t4 :set shiftwidth=4$/;"	m
+,tc	vimcpptest.vim	/^map ,tc :tabclose$/;"	m
+,te	vimcpptest.vim	/^map ,te :tabedit$/;"	m
+,tl	vimcpptest.vim	/^nmap <silent> ,tl :Tlist$/;"	m
+,tm	vimcpptest.vim	/^map ,tm :tabmove$/;"	m
+,tn	vimcpptest.vim	/^map ,tn :tabnew$/;"	m
+,tt	vimcpptest.vim	/^nmap <silent> ,tt :NERDTreeToggle$/;"	m
+,wf	vimcpptest.vim	/^nmap <silent> ,wf :w!$/;"	m
+,wm	vimcpptest.vim	/^nmap <silent> ,wm :WMToggle$/;"	m
+,ws	vimcpptest.vim	/^nmap <silent> ,ws :call DeleteTrailingWS()$/;"	m
+,ww	vimcpptest.vim	/^nmap <silent> ,ww :w$/;"	m
+,yr	vimcpptest.vim	/^map ,yr :YRShow$/;"	m
+,zo	vimcpptest.vim	/^nmap <silent> ,zo zO$/;"	m
+,zo	vimcpptest.vim	/^vmap <silent> ,zo zO$/;"	m
+-	vimcpptest.vim	/^inoremap <buffer> <silent> - :silent! foldclose$/;"	m
+-	vimcpptest.vim	/^nnoremap <buffer> <silent> - :silent! foldclose$/;"	m
+/*	vimcpptest.vim	/^inoremap <buffer> \/* \/*  *\/<Left><Left><Left>$/;"	m
+/*	vimcpptest.vim	/^vnoremap <buffer> \/* s\/*  *\/<Left><Left><Left>p$/;"	m
+/*	vimcpptest.vim	/^inoremap <buffer> \/*$/;"	m
+0	vimcpptest.vim	/^normal! 0$/;"	m
+01l	vimcpptest.vim	/^normal! 01l$/;"	m
+<C-F9>	vimcpptest.vim	/^imap <buffer> <silent> <C-F9> :call C_Make()$/;"	m
+<C-F9>	vimcpptest.vim	/^imap <buffer> <silent> <C-F9> :call C_Run()$/;"	m
+<C-F9>	vimcpptest.vim	/^map <buffer> <silent> <C-F9> :call C_Make()$/;"	m
+<C-F9>	vimcpptest.vim	/^map <buffer> <silent> <C-F9> :call C_Run()$/;"	m
+<F1>	vimcpptest.vim	/^cmap <F1> $/;"	m
+<F1>	vimcpptest.vim	/^imap <F1> $/;"	m
+<F1>	vimcpptest.vim	/^nmap <F1> $/;"	m
+<F1>	vimcpptest.vim	/^vmap <F1> $/;"	m
+<F9>	vimcpptest.vim	/^imap <buffer> <silent> <F9> :call C_Link()$/;"	m
+<F9>	vimcpptest.vim	/^map <buffer> <silent> <F9> :call C_Link()$/;"	m
+<M-F9>	vimcpptest.vim	/^imap <buffer> <silent> <M-F9> :call C_Compile()$/;"	m
+<M-F9>	vimcpptest.vim	/^map <buffer> <silent> <M-F9> :call C_Compile()$/;"	m
+<NL>	vimcpptest.vim	/^imap <buffer> <silent> <NL> =C_JumpCtrlJ()$/;"	m
+<NL>	vimcpptest.vim	/^inoremap <expr> <NL> pumvisible()?"\\<PageDown>\\\\":"\\"$/;"	m
+<NL>	vimcpptest.vim	/^nmap <NL> j$/;"	m
+<NL>	vimcpptest.vim	/^nmap <buffer> <silent> <NL> i=C_JumpCtrlJ()$/;"	m
+<Nul>c	vimcpptest.vim	/^nmap <Nul>c :cs find c =expand("<cword>")$/;"	m
+<Nul>d	vimcpptest.vim	/^nmap <Nul>d :cs find d =expand("<cword>")$/;"	m
+<Nul>e	vimcpptest.vim	/^nmap <Nul>e :cs find e =expand("<cword>")$/;"	m
+<Nul>f	vimcpptest.vim	/^nmap <Nul>f :cs find f =expand("<cfile>")$/;"	m
+<Nul>g	vimcpptest.vim	/^nmap <Nul>g :cs find g =expand("<cword>")$/;"	m
+<Nul>i	vimcpptest.vim	/^nmap <Nul>i :cs find i ^=expand("<cfile>")$/;"	m
+<Nul>s	vimcpptest.vim	/^nmap <Nul>s :cs find s =expand("<cword>")$/;"	m
+<Nul>t	vimcpptest.vim	/^nmap <Nul>t :cs find t =expand("<cword>")$/;"	m
+<Plug>NetrwBrowseX	vimcpptest.vim	/^nnoremap <silent> <Plug>NetrwBrowseX :call netrw#NetrwBrowseX(expand("<cWORD>"),0)$/;"	m
+<S-F9>	vimcpptest.vim	/^imap <buffer> <silent> <S-F9> :call C_Arguments()$/;"	m
+<S-F9>	vimcpptest.vim	/^map <buffer> <silent> <S-F9> :call C_Arguments()$/;"	m
+<kMinus>	vimcpptest.vim	/^inoremap <buffer> <silent> <kMinus> :silent! foldclose$/;"	m
+<kMinus>	vimcpptest.vim	/^nnoremap <buffer> <silent> <kMinus> :silent! foldclose$/;"	m
+<kMultiply>	vimcpptest.vim	/^inoremap <buffer> <silent> <kMultiply> :silent! %foldopen!$/;"	m
+<kMultiply>	vimcpptest.vim	/^nnoremap <buffer> <silent> <kMultiply> :silent! %foldopen!$/;"	m
+<kPlus>	vimcpptest.vim	/^inoremap <buffer> <silent> <kPlus> :silent! foldopen$/;"	m
+<kPlus>	vimcpptest.vim	/^nnoremap <buffer> <silent> <kPlus> :silent! foldopen$/;"	m
+=	vimcpptest.vim	/^inoremap <buffer> <silent> = :silent! %foldclose$/;"	m
+=	vimcpptest.vim	/^nnoremap <buffer> <silent> = :silent! %foldclose$/;"	m
+BOOST_INCLUDEDIR	make_test.mak	/^BOOST_INCLUDEDIR = \/home\/ncai\/Libraries\/boost_1_48_0\/$/;"	m
+BOOST_LDFLAGS	make_test.mak	/^BOOST_LDFLAGS := $(addprefix -lboost_,$(BOOST_MODULES_LIBS))$/;"	m
+BOOST_LIBDIR	make_test.mak	/^BOOST_LIBDIR = \/home\/ncai\/Libraries\/boost_1_48_0\/stage\/lib\/$/;"	m
+BOOST_MODULES	make_test.mak	/^BOOST_MODULES = \\$/;"	m
+BOOST_MODULES_LIBS	make_test.mak	/^BOOST_MODULES_LIBS := $(addsuffix $(BOOT_MODULES_TYPE),$(BOOST_MODULES))$/;"	m
+BOOST_MODULES_TYPE	make_test.mak	/^BOOST_MODULES_TYPE := -mt$/;"	m
+CPPFLAGS	make_test.mak	/^CPPFLAGS := \\$/;"	m
+LDFLAGS	make_test.mak	/^LDFLAGS  := \\$/;"	m
+MOREFLAGS	make_test.mak	/^MOREFLAGS= -ansi -pedantic -Wpointer-arith -Wcast-qual -Wcast-align \\$/;"	m
+SHELL	make_test.mak	/^SHELL=\/bin\/sh$/;"	m
+SessionLoad	vimcpptest.vim	/^let SessionLoad = 1$/;"	v
+\+"	vimcpptest.vim	/^inoremap <buffer> <silent> \\+" :call C_InsertTemplate("cpp.cout-operator")$/;"	m
+\+"	vimcpptest.vim	/^noremap <buffer> <silent> \\+" :call C_InsertTemplate("cpp.cout-operator")$/;"	m
+\+ai	vimcpptest.vim	/^inoremap <buffer> <silent> \\+ai :call C_InsertTemplate("cpp.accessor-implementation")$/;"	m
+\+ai	vimcpptest.vim	/^noremap <buffer> <silent> \\+ai :call C_InsertTemplate("cpp.accessor-implementation")$/;"	m
+\+c	vimcpptest.vim	/^inoremap <buffer> <silent> \\+c :call C_InsertTemplate("cpp.class-definition")$/;"	m
+\+c	vimcpptest.vim	/^noremap <buffer> <silent> \\+c :call C_InsertTemplate("cpp.class-definition")$/;"	m
+\+c.	vimcpptest.vim	/^inoremap <buffer> <silent> \\+c. :call C_InsertTemplate("cpp.catch-points")$/;"	m
+\+c.	vimcpptest.vim	/^nnoremap <buffer> <silent> \\+c. :call C_InsertTemplate("cpp.catch-points")$/;"	m
+\+c.	vimcpptest.vim	/^onoremap <buffer> <silent> \\+c. :call C_InsertTemplate("cpp.catch-points")$/;"	m
+\+c.	vimcpptest.vim	/^vnoremap <buffer> <silent> \\+c. :call C_InsertTemplate("cpp.catch-points", "v")$/;"	m
+\+ca	vimcpptest.vim	/^inoremap <buffer> <silent> \\+ca :call C_InsertTemplate("cpp.catch")$/;"	m
+\+ca	vimcpptest.vim	/^nnoremap <buffer> <silent> \\+ca :call C_InsertTemplate("cpp.catch")$/;"	m
+\+ca	vimcpptest.vim	/^onoremap <buffer> <silent> \\+ca :call C_InsertTemplate("cpp.catch")$/;"	m
+\+ca	vimcpptest.vim	/^vnoremap <buffer> <silent> \\+ca :call C_InsertTemplate("cpp.catch", "v")$/;"	m
+\+ci	vimcpptest.vim	/^inoremap <buffer> <silent> \\+ci :call C_InsertTemplate("cpp.class-implementation")$/;"	m
+\+ci	vimcpptest.vim	/^noremap <buffer> <silent> \\+ci :call C_InsertTemplate("cpp.class-implementation")$/;"	m
+\+cn	vimcpptest.vim	/^inoremap <buffer> <silent> \\+cn :call C_InsertTemplate("cpp.class-using-new-definition")$/;"	m
+\+cn	vimcpptest.vim	/^noremap <buffer> <silent> \\+cn :call C_InsertTemplate("cpp.class-using-new-definition")$/;"	m
+\+cni	vimcpptest.vim	/^inoremap <buffer> <silent> \\+cni :call C_InsertTemplate("cpp.class-using-new-implementation")$/;"	m
+\+cni	vimcpptest.vim	/^noremap <buffer> <silent> \\+cni :call C_InsertTemplate("cpp.class-using-new-implementation")$/;"	m
+\+co	vimcpptest.vim	/^inoremap <buffer> <silent> \\+co :call C_InsertTemplate("cpp.cout")$/;"	m
+\+co	vimcpptest.vim	/^noremap <buffer> <silent> \\+co :call C_InsertTemplate("cpp.cout")$/;"	m
+\+ec	vimcpptest.vim	/^inoremap <buffer> <silent> \\+ec :call C_InsertTemplate("cpp.error-class")$/;"	m
+\+ec	vimcpptest.vim	/^noremap <buffer> <silent> \\+ec :call C_InsertTemplate("cpp.error-class")$/;"	m
+\+mi	vimcpptest.vim	/^inoremap <buffer> <silent> \\+mi :call C_InsertTemplate("cpp.method-implementation")$/;"	m
+\+mi	vimcpptest.vim	/^noremap <buffer> <silent> \\+mi :call C_InsertTemplate("cpp.method-implementation")$/;"	m
+\+pc	vimcpptest.vim	/^inoremap <buffer> \\+pc :IncludeCppC9Library $/;"	m
+\+pc	vimcpptest.vim	/^noremap <buffer> \\+pc :IncludeCppCLibrary $/;"	m
+\+ps	vimcpptest.vim	/^inoremap <buffer> \\+ps :IncludeCppLibrary $/;"	m
+\+ps	vimcpptest.vim	/^noremap <buffer> \\+ps :IncludeCppLibrary $/;"	m
+\+tai	vimcpptest.vim	/^inoremap <buffer> <silent> \\+tai :call C_InsertTemplate("cpp.template-accessor-implementation")$/;"	m
+\+tai	vimcpptest.vim	/^noremap <buffer> <silent> \\+tai :call C_InsertTemplate("cpp.template-accessor-implementation")$/;"	m
+\+tc	vimcpptest.vim	/^inoremap <buffer> <silent> \\+tc :call C_InsertTemplate("cpp.template-class-definition")$/;"	m
+\+tc	vimcpptest.vim	/^noremap <buffer> <silent> \\+tc :call C_InsertTemplate("cpp.template-class-definition")$/;"	m
+\+tci	vimcpptest.vim	/^inoremap <buffer> <silent> \\+tci :call C_InsertTemplate("cpp.template-class-implementation")$/;"	m
+\+tci	vimcpptest.vim	/^noremap <buffer> <silent> \\+tci :call C_InsertTemplate("cpp.template-class-implementation")$/;"	m
+\+tcn	vimcpptest.vim	/^inoremap <buffer> <silent> \\+tcn :call C_InsertTemplate("cpp.template-class-using-new-definition")$/;"	m
+\+tcn	vimcpptest.vim	/^noremap <buffer> <silent> \\+tcn :call C_InsertTemplate("cpp.template-class-using-new-definition")$/;"	m
+\+tcni	vimcpptest.vim	/^inoremap <buffer> <silent> \\+tcni :call C_InsertTemplate("cpp.template-class-using-new-implementation")$/;"	m
+\+tcni	vimcpptest.vim	/^noremap <buffer> <silent> \\+tcni :call C_InsertTemplate("cpp.template-class-using-new-implementation")$/;"	m
+\+tf	vimcpptest.vim	/^inoremap <buffer> <silent> \\+tf :call C_InsertTemplate("cpp.template-function")$/;"	m
+\+tf	vimcpptest.vim	/^noremap <buffer> <silent> \\+tf :call C_InsertTemplate("cpp.template-function")$/;"	m
+\+tmi	vimcpptest.vim	/^inoremap <buffer> <silent> \\+tmi :call C_InsertTemplate("cpp.template-method-implementation")$/;"	m
+\+tmi	vimcpptest.vim	/^noremap <buffer> <silent> \\+tmi :call C_InsertTemplate("cpp.template-method-implementation")$/;"	m
+\+tr	vimcpptest.vim	/^inoremap <buffer> <silent> \\+tr :call C_InsertTemplate("cpp.try-catch")$/;"	m
+\+tr	vimcpptest.vim	/^nnoremap <buffer> <silent> \\+tr :call C_InsertTemplate("cpp.try-catch")$/;"	m
+\+tr	vimcpptest.vim	/^onoremap <buffer> <silent> \\+tr :call C_InsertTemplate("cpp.try-catch")$/;"	m
+\+tr	vimcpptest.vim	/^vnoremap <buffer> <silent> \\+tr :call C_InsertTemplate("cpp.try-catch", "v")$/;"	m
+\c*	vimcpptest.vim	/^nnoremap <buffer> <silent> \\c* :call C_CodeToCommentC()$/;"	m
+\c*	vimcpptest.vim	/^onoremap <buffer> <silent> \\c* :call C_CodeToCommentC()$/;"	m
+\c*	vimcpptest.vim	/^vnoremap <buffer> <silent> \\c* :call C_CodeToCommentC()$/;"	m
+\cc	vimcpptest.vim	/^nnoremap <buffer> <silent> \\cc :call C_CodeToCommentCpp()$/;"	m
+\cc	vimcpptest.vim	/^onoremap <buffer> <silent> \\cc :call C_CodeToCommentCpp()$/;"	m
+\cc	vimcpptest.vim	/^vnoremap <buffer> <silent> \\cc :call C_CodeToCommentCpp()$/;"	m
+\ccl	vimcpptest.vim	/^inoremap <buffer> <silent> \\ccl :call C_InsertTemplate("comment.class")$/;"	m
+\ccl	vimcpptest.vim	/^noremap <buffer> <silent> \\ccl :call C_InsertTemplate("comment.class")$/;"	m
+\ccs	vimcpptest.vim	/^inoremap <buffer> \\ccs :CFileSection $/;"	m
+\ccs	vimcpptest.vim	/^noremap <buffer> \\ccs :CFileSection $/;"	m
+\cd	vimcpptest.vim	/^inoremap <buffer> <silent> \\cd :call C_InsertDateAndTime('d')$/;"	m
+\cd	vimcpptest.vim	/^nnoremap <buffer> <silent> \\cd :call C_InsertDateAndTime('d')$/;"	m
+\cd	vimcpptest.vim	/^onoremap <buffer> <silent> \\cd :call C_InsertDateAndTime('d')$/;"	m
+\cd	vimcpptest.vim	/^vnoremap <buffer> <silent> \\cd s:call C_InsertDateAndTime('d')$/;"	m
+\cfdh	vimcpptest.vim	/^inoremap <buffer> <silent> \\cfdh :call C_InsertTemplate("comment.file-description-header")$/;"	m
+\cfdh	vimcpptest.vim	/^noremap <buffer> <silent> \\cfdh :call C_InsertTemplate("comment.file-description-header")$/;"	m
+\cfdi	vimcpptest.vim	/^inoremap <buffer> <silent> \\cfdi :call C_InsertTemplate("comment.file-description")$/;"	m
+\cfdi	vimcpptest.vim	/^noremap <buffer> <silent> \\cfdi :call C_InsertTemplate("comment.file-description")$/;"	m
+\cfr	vimcpptest.vim	/^inoremap <buffer> <silent> \\cfr :call C_InsertTemplate("comment.frame")$/;"	m
+\cfr	vimcpptest.vim	/^noremap <buffer> <silent> \\cfr :call C_InsertTemplate("comment.frame")$/;"	m
+\cfu	vimcpptest.vim	/^inoremap <buffer> <silent> \\cfu :call C_InsertTemplate("comment.function")$/;"	m
+\cfu	vimcpptest.vim	/^noremap <buffer> <silent> \\cfu :call C_InsertTemplate("comment.function")$/;"	m
+\chs	vimcpptest.vim	/^inoremap <buffer> \\chs :HFileSection $/;"	m
+\chs	vimcpptest.vim	/^noremap <buffer> \\chs :HFileSection $/;"	m
+\cj	vimcpptest.vim	/^inoremap <buffer> <silent> \\cj :call C_AdjustLineEndComm()$/;"	m
+\cj	vimcpptest.vim	/^nnoremap <buffer> <silent> \\cj :call C_AdjustLineEndComm()$/;"	m
+\cj	vimcpptest.vim	/^vnoremap <buffer> <silent> \\cj :call C_AdjustLineEndComm()$/;"	m
+\ckc	vimcpptest.vim	/^inoremap <buffer> \\ckc :KeywordComment $/;"	m
+\ckc	vimcpptest.vim	/^noremap <buffer> \\ckc :KeywordComment $/;"	m
+\cl	vimcpptest.vim	/^inoremap <buffer> <silent> \\cl :call C_EndOfLineComment()$/;"	m
+\cl	vimcpptest.vim	/^nnoremap <buffer> <silent> \\cl :call C_EndOfLineComment()$/;"	m
+\cl	vimcpptest.vim	/^onoremap <buffer> <silent> \\cl :call C_EndOfLineComment()$/;"	m
+\cl	vimcpptest.vim	/^vnoremap <buffer> <silent> \\cl :call C_EndOfLineComment()$/;"	m
+\cme	vimcpptest.vim	/^inoremap <buffer> <silent> \\cme :call C_InsertTemplate("comment.method")$/;"	m
+\cme	vimcpptest.vim	/^noremap <buffer> <silent> \\cme :call C_InsertTemplate("comment.method")$/;"	m
+\co	vimcpptest.vim	/^nnoremap <buffer> <silent> \\co :call C_CommentToCode()$/;"	m
+\co	vimcpptest.vim	/^onoremap <buffer> <silent> \\co :call C_CommentToCode()$/;"	m
+\co	vimcpptest.vim	/^vnoremap <buffer> <silent> \\co :call C_CommentToCode()$/;"	m
+\cs	vimcpptest.vim	/^noremap <buffer> <silent> \\cs :call C_GetLineEndCommCol()$/;"	m
+\csc	vimcpptest.vim	/^inoremap <buffer> \\csc :SpecialComment $/;"	m
+\csc	vimcpptest.vim	/^noremap <buffer> \\csc :SpecialComment $/;"	m
+\ct	vimcpptest.vim	/^inoremap <buffer> <silent> \\ct :call C_InsertDateAndTime('dt')$/;"	m
+\ct	vimcpptest.vim	/^nnoremap <buffer> <silent> \\ct :call C_InsertDateAndTime('dt')$/;"	m
+\ct	vimcpptest.vim	/^onoremap <buffer> <silent> \\ct :call C_InsertDateAndTime('dt')$/;"	m
+\ct	vimcpptest.vim	/^vnoremap <buffer> <silent> \\ct s:call C_InsertDateAndTime('dt')$/;"	m
+\cx	vimcpptest.vim	/^inoremap <buffer> <silent> \\cx :call C_CommentToggle( )$/;"	m
+\cx	vimcpptest.vim	/^nnoremap <buffer> <silent> \\cx :call C_CommentToggle( )$/;"	m
+\cx	vimcpptest.vim	/^onoremap <buffer> <silent> \\cx :call C_CommentToggle( )$/;"	m
+\cx	vimcpptest.vim	/^vnoremap <buffer> <silent> \\cx :call C_CommentToggle( )$/;"	m
+\hm	vimcpptest.vim	/^imap <buffer> <silent> \\hm :call C_Help("m")$/;"	m
+\hm	vimcpptest.vim	/^map <buffer> <silent> \\hm :call C_Help("m")$/;"	m
+\hp	vimcpptest.vim	/^imap <buffer> <silent> \\hp :call C_HelpCsupport()$/;"	m
+\hp	vimcpptest.vim	/^map <buffer> <silent> \\hp :call C_HelpCsupport()$/;"	m
+\i0	vimcpptest.vim	/^inoremap <buffer> <silent> \\i0 :call C_CodeFor("up"  )$/;"	m
+\i0	vimcpptest.vim	/^nnoremap <buffer> <silent> \\i0 :call C_CodeFor("up"  )$/;"	m
+\i0	vimcpptest.vim	/^onoremap <buffer> <silent> \\i0 :call C_CodeFor("up"  )$/;"	m
+\i0	vimcpptest.vim	/^vnoremap <buffer> <silent> \\i0 :call C_CodeFor("up"  )$/;"	m
+\ias	vimcpptest.vim	/^inoremap <buffer> <silent> \\ias :call C_InsertTemplate("idioms.assert")$/;"	m
+\ias	vimcpptest.vim	/^nnoremap <buffer> <silent> \\ias :call C_InsertTemplate("idioms.assert")$/;"	m
+\ias	vimcpptest.vim	/^onoremap <buffer> <silent> \\ias :call C_InsertTemplate("idioms.assert")$/;"	m
+\ias	vimcpptest.vim	/^vnoremap <buffer> <silent> \\ias :call C_InsertTemplate("idioms.assert", "v")$/;"	m
+\ica	vimcpptest.vim	/^inoremap <buffer> <silent> \\ica :call C_InsertTemplate("idioms.calloc")$/;"	m
+\ica	vimcpptest.vim	/^noremap <buffer> <silent> \\ica :call C_InsertTemplate("idioms.calloc")$/;"	m
+\ie	vimcpptest.vim	/^inoremap <buffer> <silent> \\ie :call C_InsertTemplate("idioms.enum")$/;"	m
+\ie	vimcpptest.vim	/^nnoremap <buffer> <silent> \\ie :call C_InsertTemplate("idioms.enum")$/;"	m
+\ie	vimcpptest.vim	/^onoremap <buffer> <silent> \\ie :call C_InsertTemplate("idioms.enum")$/;"	m
+\ie	vimcpptest.vim	/^vnoremap <buffer> <silent> \\ie :call C_InsertTemplate("idioms.enum"  , "v")$/;"	m
+\if	vimcpptest.vim	/^inoremap <buffer> <silent> \\if :call C_InsertTemplate("idioms.function")$/;"	m
+\if	vimcpptest.vim	/^nnoremap <buffer> <silent> \\if :call C_InsertTemplate("idioms.function")$/;"	m
+\if	vimcpptest.vim	/^onoremap <buffer> <silent> \\if :call C_InsertTemplate("idioms.function")$/;"	m
+\if	vimcpptest.vim	/^vnoremap <buffer> <silent> \\if :call C_InsertTemplate("idioms.function", "v")$/;"	m
+\ifp	vimcpptest.vim	/^inoremap <buffer> <silent> \\ifp :call C_InsertTemplate("idioms.fprintf")$/;"	m
+\ifp	vimcpptest.vim	/^noremap <buffer> <silent> \\ifp :call C_InsertTemplate("idioms.fprintf")$/;"	m
+\ifs	vimcpptest.vim	/^inoremap <buffer> <silent> \\ifs :call C_InsertTemplate("idioms.fscanf")$/;"	m
+\ifs	vimcpptest.vim	/^noremap <buffer> <silent> \\ifs :call C_InsertTemplate("idioms.fscanf")$/;"	m
+\ii	vimcpptest.vim	/^inoremap <buffer> <silent> \\ii :call C_InsertTemplate("idioms.open-input-file")$/;"	m
+\ii	vimcpptest.vim	/^nnoremap <buffer> <silent> \\ii :call C_InsertTemplate("idioms.open-input-file")$/;"	m
+\ii	vimcpptest.vim	/^onoremap <buffer> <silent> \\ii :call C_InsertTemplate("idioms.open-input-file")$/;"	m
+\ii	vimcpptest.vim	/^vnoremap <buffer> <silent> \\ii :call C_InsertTemplate("idioms.open-input-file", "v")$/;"	m
+\im	vimcpptest.vim	/^inoremap <buffer> <silent> \\im :call C_InsertTemplate("idioms.main")$/;"	m
+\im	vimcpptest.vim	/^nnoremap <buffer> <silent> \\im :call C_InsertTemplate("idioms.main")$/;"	m
+\im	vimcpptest.vim	/^onoremap <buffer> <silent> \\im :call C_InsertTemplate("idioms.main")$/;"	m
+\im	vimcpptest.vim	/^vnoremap <buffer> <silent> \\im :call C_InsertTemplate("idioms.main", "v")$/;"	m
+\ima	vimcpptest.vim	/^inoremap <buffer> <silent> \\ima :call C_InsertTemplate("idioms.malloc")$/;"	m
+\ima	vimcpptest.vim	/^noremap <buffer> <silent> \\ima :call C_InsertTemplate("idioms.malloc")$/;"	m
+\in	vimcpptest.vim	/^inoremap <buffer> <silent> \\in :call C_CodeFor("down")$/;"	m
+\in	vimcpptest.vim	/^nnoremap <buffer> <silent> \\in :call C_CodeFor("down")$/;"	m
+\in	vimcpptest.vim	/^onoremap <buffer> <silent> \\in :call C_CodeFor("down")$/;"	m
+\in	vimcpptest.vim	/^vnoremap <buffer> <silent> \\in :call C_CodeFor("down")$/;"	m
+\io	vimcpptest.vim	/^inoremap <buffer> <silent> \\io :call C_InsertTemplate("idioms.open-output-file")$/;"	m
+\io	vimcpptest.vim	/^nnoremap <buffer> <silent> \\io :call C_InsertTemplate("idioms.open-output-file")$/;"	m
+\io	vimcpptest.vim	/^onoremap <buffer> <silent> \\io :call C_InsertTemplate("idioms.open-output-file")$/;"	m
+\io	vimcpptest.vim	/^vnoremap <buffer> <silent> \\io :call C_InsertTemplate("idioms.open-output-file", "v")$/;"	m
+\ip	vimcpptest.vim	/^inoremap <buffer> <silent> \\ip :call C_InsertTemplate("idioms.printf")$/;"	m
+\ip	vimcpptest.vim	/^noremap <buffer> <silent> \\ip :call C_InsertTemplate("idioms.printf")$/;"	m
+\ire	vimcpptest.vim	/^inoremap <buffer> <silent> \\ire :call C_InsertTemplate("idioms.realloc")$/;"	m
+\ire	vimcpptest.vim	/^noremap <buffer> <silent> \\ire :call C_InsertTemplate("idioms.realloc")$/;"	m
+\is	vimcpptest.vim	/^inoremap <buffer> <silent> \\is :call C_InsertTemplate("idioms.struct")$/;"	m
+\is	vimcpptest.vim	/^nnoremap <buffer> <silent> \\is :call C_InsertTemplate("idioms.struct")$/;"	m
+\is	vimcpptest.vim	/^onoremap <buffer> <silent> \\is :call C_InsertTemplate("idioms.struct")$/;"	m
+\is	vimcpptest.vim	/^vnoremap <buffer> <silent> \\is :call C_InsertTemplate("idioms.struct", "v")$/;"	m
+\isc	vimcpptest.vim	/^inoremap <buffer> <silent> \\isc :call C_InsertTemplate("idioms.scanf")$/;"	m
+\isc	vimcpptest.vim	/^noremap <buffer> <silent> \\isc :call C_InsertTemplate("idioms.scanf")$/;"	m
+\isf	vimcpptest.vim	/^inoremap <buffer> <silent> \\isf :call C_InsertTemplate("idioms.function-static")$/;"	m
+\isf	vimcpptest.vim	/^nnoremap <buffer> <silent> \\isf :call C_InsertTemplate("idioms.function-static")$/;"	m
+\isf	vimcpptest.vim	/^onoremap <buffer> <silent> \\isf :call C_InsertTemplate("idioms.function-static")$/;"	m
+\isf	vimcpptest.vim	/^vnoremap <buffer> <silent> \\isf :call C_InsertTemplate("idioms.function-static", "v")$/;"	m
+\isi	vimcpptest.vim	/^inoremap <buffer> <silent> \\isi :call C_InsertTemplate("idioms.sizeof")$/;"	m
+\isi	vimcpptest.vim	/^nnoremap <buffer> <silent> \\isi :call C_InsertTemplate("idioms.sizeof")$/;"	m
+\isi	vimcpptest.vim	/^onoremap <buffer> <silent> \\isi :call C_InsertTemplate("idioms.sizeof")$/;"	m
+\isi	vimcpptest.vim	/^vnoremap <buffer> <silent> \\isi :call C_InsertTemplate("idioms.sizeof", "v")$/;"	m
+\iu	vimcpptest.vim	/^inoremap <buffer> <silent> \\iu :call C_InsertTemplate("idioms.union")$/;"	m
+\iu	vimcpptest.vim	/^nnoremap <buffer> <silent> \\iu :call C_InsertTemplate("idioms.union")$/;"	m
+\iu	vimcpptest.vim	/^onoremap <buffer> <silent> \\iu :call C_InsertTemplate("idioms.union")$/;"	m
+\iu	vimcpptest.vim	/^vnoremap <buffer> <silent> \\iu :call C_InsertTemplate("idioms.union" , "v")$/;"	m
+\nc	vimcpptest.vim	/^inoremap <buffer> <silent> \\nc :call C_ProtoClear()$/;"	m
+\nc	vimcpptest.vim	/^noremap <buffer> <silent> \\nc :call C_ProtoClear()$/;"	m
+\ne	vimcpptest.vim	/^inoremap <buffer> <silent> \\ne :call C_CodeSnippet("e")$/;"	m
+\ne	vimcpptest.vim	/^noremap <buffer> <silent> \\ne :call C_CodeSnippet("e")$/;"	m
+\nf	vimcpptest.vim	/^inoremap <buffer> <silent> \\nf :call C_ProtoPick("function")$/;"	m
+\nf	vimcpptest.vim	/^nnoremap <buffer> <silent> \\nf :call C_ProtoPick("function")$/;"	m
+\nf	vimcpptest.vim	/^onoremap <buffer> <silent> \\nf :call C_ProtoPick("function")$/;"	m
+\nf	vimcpptest.vim	/^vnoremap <buffer> <silent> \\nf :call C_ProtoPick("function")$/;"	m
+\ni	vimcpptest.vim	/^inoremap <buffer> <silent> \\ni :call C_ProtoInsert()$/;"	m
+\ni	vimcpptest.vim	/^noremap <buffer> <silent> \\ni :call C_ProtoInsert()$/;"	m
+\nm	vimcpptest.vim	/^inoremap <buffer> <silent> \\nm :call C_ProtoPick("method")$/;"	m
+\nm	vimcpptest.vim	/^nnoremap <buffer> <silent> \\nm :call C_ProtoPick("method")$/;"	m
+\nm	vimcpptest.vim	/^onoremap <buffer> <silent> \\nm :call C_ProtoPick("method")$/;"	m
+\nm	vimcpptest.vim	/^vnoremap <buffer> <silent> \\nm :call C_ProtoPick("method")$/;"	m
+\np	vimcpptest.vim	/^inoremap <buffer> <silent> \\np :call C_ProtoPick("function")$/;"	m
+\np	vimcpptest.vim	/^nnoremap <buffer> <silent> \\np :call C_ProtoPick("function")$/;"	m
+\np	vimcpptest.vim	/^onoremap <buffer> <silent> \\np :call C_ProtoPick("function")$/;"	m
+\np	vimcpptest.vim	/^vnoremap <buffer> <silent> \\np :call C_ProtoPick("function")$/;"	m
+\nr	vimcpptest.vim	/^inoremap <buffer> <silent> \\nr :call C_CodeSnippet("r")$/;"	m
+\nr	vimcpptest.vim	/^noremap <buffer> <silent> \\nr :call C_CodeSnippet("r")$/;"	m
+\ns	vimcpptest.vim	/^inoremap <buffer> <silent> \\ns :call C_ProtoShow()$/;"	m
+\ns	vimcpptest.vim	/^noremap <buffer> <silent> \\ns :call C_ProtoShow()$/;"	m
+\ntl	vimcpptest.vim	/^inoremap <buffer> <silent> \\ntl :call C_BrowseTemplateFiles("Local")$/;"	m
+\ntl	vimcpptest.vim	/^noremap <buffer> <silent> \\ntl :call C_BrowseTemplateFiles("Local")$/;"	m
+\ntr	vimcpptest.vim	/^inoremap <buffer> <silent> \\ntr :call C_RereadTemplates()$/;"	m
+\ntr	vimcpptest.vim	/^noremap <buffer> <silent> \\ntr :call C_RereadTemplates()$/;"	m
+\nts	vimcpptest.vim	/^inoremap <buffer> \\nts :CStyle $/;"	m
+\nts	vimcpptest.vim	/^noremap <buffer> \\nts :CStyle $/;"	m
+\nw	vimcpptest.vim	/^inoremap <buffer> <silent> \\nw :call C_CodeSnippet("w")$/;"	m
+\nw	vimcpptest.vim	/^nnoremap <buffer> <silent> \\nw :call C_CodeSnippet("w")$/;"	m
+\nw	vimcpptest.vim	/^onoremap <buffer> <silent> \\nw :call C_CodeSnippet("w")$/;"	m
+\nw	vimcpptest.vim	/^vnoremap <buffer> <silent> \\nw :call C_CodeSnippet("wv")$/;"	m
+\p<	vimcpptest.vim	/^inoremap <buffer> <silent> \\p< :call C_InsertTemplate("preprocessor.include-global")$/;"	m
+\p<	vimcpptest.vim	/^noremap <buffer> <silent> \\p< :call C_InsertTemplate("preprocessor.include-global")$/;"	m
+\p"	vimcpptest.vim	/^inoremap <buffer> <silent> \\p" :call C_InsertTemplate("preprocessor.include-local")$/;"	m
+\p"	vimcpptest.vim	/^noremap <buffer> <silent> \\p" :call C_InsertTemplate("preprocessor.include-local")$/;"	m
+\pc	vimcpptest.vim	/^inoremap <buffer> \\pc :IncludeC99Library $/;"	m
+\pc	vimcpptest.vim	/^noremap <buffer> \\pc :IncludeC99Library $/;"	m
+\pd	vimcpptest.vim	/^inoremap <buffer> <silent> \\pd :call C_InsertTemplate("preprocessor.define")$/;"	m
+\pd	vimcpptest.vim	/^noremap <buffer> <silent> \\pd :call C_InsertTemplate("preprocessor.define")$/;"	m
+\pe	vimcpptest.vim	/^inoremap <buffer> <silent> \\pe :call C_InsertTemplate("preprocessor.error")$/;"	m
+\pe	vimcpptest.vim	/^noremap <buffer> <silent> \\pe :call C_InsertTemplate("preprocessor.error")$/;"	m
+\pi0	vimcpptest.vim	/^inoremap <buffer> <silent> \\pi0 :call C_PPIf0("a")$/;"	m
+\pi0	vimcpptest.vim	/^nnoremap <buffer> <silent> \\pi0 :call C_PPIf0("a")$/;"	m
+\pi0	vimcpptest.vim	/^onoremap <buffer> <silent> \\pi0 :call C_PPIf0("a")$/;"	m
+\pi0	vimcpptest.vim	/^vnoremap <buffer> <silent> \\pi0 :call C_PPIf0("v")$/;"	m
+\pid	vimcpptest.vim	/^inoremap <buffer> <silent> \\pid :call C_InsertTemplate("preprocessor.ifdef-else-endif")$/;"	m
+\pid	vimcpptest.vim	/^nnoremap <buffer> <silent> \\pid :call C_InsertTemplate("preprocessor.ifdef-else-endif")$/;"	m
+\pid	vimcpptest.vim	/^onoremap <buffer> <silent> \\pid :call C_InsertTemplate("preprocessor.ifdef-else-endif")$/;"	m
+\pid	vimcpptest.vim	/^vnoremap <buffer> <silent> \\pid :call C_InsertTemplate("preprocessor.ifdef-else-endif", "v")$/;"	m
+\pie	vimcpptest.vim	/^inoremap <buffer> <silent> \\pie :call C_InsertTemplate("preprocessor.if-else-endif")$/;"	m
+\pie	vimcpptest.vim	/^nnoremap <buffer> <silent> \\pie :call C_InsertTemplate("preprocessor.if-else-endif")$/;"	m
+\pie	vimcpptest.vim	/^onoremap <buffer> <silent> \\pie :call C_InsertTemplate("preprocessor.if-else-endif")$/;"	m
+\pie	vimcpptest.vim	/^vnoremap <buffer> <silent> \\pie :call C_InsertTemplate("preprocessor.if-else-endif", "v")$/;"	m
+\pif	vimcpptest.vim	/^inoremap <buffer> <silent> \\pif :call C_InsertTemplate("preprocessor.if-endif")$/;"	m
+\pif	vimcpptest.vim	/^nnoremap <buffer> <silent> \\pif :call C_InsertTemplate("preprocessor.if-endif")$/;"	m
+\pif	vimcpptest.vim	/^onoremap <buffer> <silent> \\pif :call C_InsertTemplate("preprocessor.if-endif")$/;"	m
+\pif	vimcpptest.vim	/^vnoremap <buffer> <silent> \\pif :call C_InsertTemplate("preprocessor.if-endif", "v")$/;"	m
+\pin	vimcpptest.vim	/^inoremap <buffer> <silent> \\pin :call C_InsertTemplate("preprocessor.ifndef-else-endif")$/;"	m
+\pin	vimcpptest.vim	/^nnoremap <buffer> <silent> \\pin :call C_InsertTemplate("preprocessor.ifndef-else-endif")$/;"	m
+\pin	vimcpptest.vim	/^onoremap <buffer> <silent> \\pin :call C_InsertTemplate("preprocessor.ifndef-else-endif")$/;"	m
+\pin	vimcpptest.vim	/^vnoremap <buffer> <silent> \\pin :call C_InsertTemplate("preprocessor.ifndef-else-endif", "v")$/;"	m
+\pind	vimcpptest.vim	/^inoremap <buffer> <silent> \\pind :call C_InsertTemplate("preprocessor.ifndef-def-endif")$/;"	m
+\pind	vimcpptest.vim	/^nnoremap <buffer> <silent> \\pind :call C_InsertTemplate("preprocessor.ifndef-def-endif")$/;"	m
+\pind	vimcpptest.vim	/^onoremap <buffer> <silent> \\pind :call C_InsertTemplate("preprocessor.ifndef-def-endif")$/;"	m
+\pind	vimcpptest.vim	/^vnoremap <buffer> <silent> \\pind :call C_InsertTemplate("preprocessor.ifndef-def-endif", "v")$/;"	m
+\pl	vimcpptest.vim	/^inoremap <buffer> <silent> \\pl :call C_InsertTemplate("preprocessor.line")$/;"	m
+\pl	vimcpptest.vim	/^noremap <buffer> <silent> \\pl :call C_InsertTemplate("preprocessor.line")$/;"	m
+\pp	vimcpptest.vim	/^inoremap <buffer> <silent> \\pp :call C_InsertTemplate("preprocessor.pragma")$/;"	m
+\pp	vimcpptest.vim	/^noremap <buffer> <silent> \\pp :call C_InsertTemplate("preprocessor.pragma")$/;"	m
+\pr0	vimcpptest.vim	/^inoremap <buffer> <silent> \\pr0 :call C_PPIf0Remove()$/;"	m
+\pr0	vimcpptest.vim	/^noremap <buffer> <silent> \\pr0 :call C_PPIf0Remove()$/;"	m
+\ps	vimcpptest.vim	/^inoremap <buffer> \\ps :IncludeStdLibrary $/;"	m
+\ps	vimcpptest.vim	/^noremap <buffer> \\ps :IncludeStdLibrary $/;"	m
+\pu	vimcpptest.vim	/^inoremap <buffer> <silent> \\pu :call C_InsertTemplate("preprocessor.undefine")$/;"	m
+\pu	vimcpptest.vim	/^noremap <buffer> <silent> \\pu :call C_InsertTemplate("preprocessor.undefine")$/;"	m
+\ra	vimcpptest.vim	/^imap <buffer> <silent> \\ra :call C_Arguments()$/;"	m
+\ra	vimcpptest.vim	/^map <buffer> <silent> \\ra :call C_Arguments()$/;"	m
+\rc	vimcpptest.vim	/^imap <buffer> <silent> \\rc :call C_Compile()$/;"	m
+\rc	vimcpptest.vim	/^map <buffer> <silent> \\rc :call C_Compile()$/;"	m
+\rcm	vimcpptest.vim	/^imap <buffer> <silent> \\rcm :call C_ChooseMakefile()$/;"	m
+\rcm	vimcpptest.vim	/^map <buffer> <silent> \\rcm :call C_ChooseMakefile()$/;"	m
+\rd	vimcpptest.vim	/^imap <buffer> <silent> \\rd :call C_Indent()$/;"	m
+\rd	vimcpptest.vim	/^map <buffer> <silent> \\rd :call C_Indent()$/;"	m
+\rh	vimcpptest.vim	/^imap <buffer> <silent> \\rh :call C_Hardcopy()$/;"	m
+\rh	vimcpptest.vim	/^nmap <buffer> <silent> \\rh :call C_Hardcopy()$/;"	m
+\rh	vimcpptest.vim	/^omap <buffer> <silent> \\rh :call C_Hardcopy()$/;"	m
+\rh	vimcpptest.vim	/^vmap <buffer> <silent> \\rh :call C_Hardcopy()$/;"	m
+\rl	vimcpptest.vim	/^imap <buffer> <silent> \\rl :call C_Link()$/;"	m
+\rl	vimcpptest.vim	/^map <buffer> <silent> \\rl :call C_Link()$/;"	m
+\rm	vimcpptest.vim	/^imap <buffer> <silent> \\rm :call C_Make()$/;"	m
+\rm	vimcpptest.vim	/^map <buffer> <silent> \\rm :call C_Make()$/;"	m
+\rma	vimcpptest.vim	/^imap <buffer> <silent> \\rma :call C_MakeArguments()$/;"	m
+\rma	vimcpptest.vim	/^map <buffer> <silent> \\rma :call C_MakeArguments()$/;"	m
+\rmc	vimcpptest.vim	/^imap <buffer> <silent> \\rmc :call C_MakeClean()$/;"	m
+\rmc	vimcpptest.vim	/^map <buffer> <silent> \\rmc :call C_MakeClean()$/;"	m
+\rme	vimcpptest.vim	/^imap <buffer> <silent> \\rme :call C_ExeToRun()$/;"	m
+\rme	vimcpptest.vim	/^imap <buffer> <silent> \\rme :call C_MakeExeToRun()$/;"	m
+\rme	vimcpptest.vim	/^map <buffer> <silent> \\rme :call C_ExeToRun()$/;"	m
+\rme	vimcpptest.vim	/^map <buffer> <silent> \\rme :call C_MakeExeToRun()$/;"	m
+\ro	vimcpptest.vim	/^imap <buffer> <silent> \\ro :call C_Toggle_Gvim_Xterm()$/;"	m
+\ro	vimcpptest.vim	/^map <buffer> <silent> \\ro :call C_Toggle_Gvim_Xterm()$/;"	m
+\rp	vimcpptest.vim	/^imap <buffer> <silent> \\rp :call C_SplintCheck()$/;"	m
+\rp	vimcpptest.vim	/^map <buffer> <silent> \\rp :call C_SplintCheck()$/;"	m
+\rpa	vimcpptest.vim	/^imap <buffer> <silent> \\rpa :call C_SplintArguments()$/;"	m
+\rpa	vimcpptest.vim	/^map <buffer> <silent> \\rpa :call C_SplintArguments()$/;"	m
+\rr	vimcpptest.vim	/^imap <buffer> <silent> \\rr :call C_Run()$/;"	m
+\rr	vimcpptest.vim	/^map <buffer> <silent> \\rr :call C_Run()$/;"	m
+\rs	vimcpptest.vim	/^imap <buffer> <silent> \\rs :call C_Settings()$/;"	m
+\rs	vimcpptest.vim	/^map <buffer> <silent> \\rs :call C_Settings()$/;"	m
+\rx	vimcpptest.vim	/^imap <buffer> <silent> \\rx :call C_XtermSize()$/;"	m
+\rx	vimcpptest.vim	/^map <buffer> <silent> \\rx :call C_XtermSize()$/;"	m
+\sb	vimcpptest.vim	/^inoremap <buffer> <silent> \\sb :call C_InsertTemplate("statements.block")$/;"	m
+\sb	vimcpptest.vim	/^nnoremap <buffer> <silent> \\sb :call C_InsertTemplate("statements.block")$/;"	m
+\sb	vimcpptest.vim	/^onoremap <buffer> <silent> \\sb :call C_InsertTemplate("statements.block")$/;"	m
+\sb	vimcpptest.vim	/^vnoremap <buffer> <silent> \\sb :call C_InsertTemplate("statements.block", "v")$/;"	m
+\sc	vimcpptest.vim	/^inoremap <buffer> <silent> \\sc :call C_InsertTemplate("statements.case")$/;"	m
+\sc	vimcpptest.vim	/^noremap <buffer> <silent> \\sc :call C_InsertTemplate("statements.case")$/;"	m
+\sd	vimcpptest.vim	/^inoremap <buffer> <silent> \\sd :call C_InsertTemplate("statements.do-while")$/;"	m
+\sd	vimcpptest.vim	/^nnoremap <buffer> <silent> \\sd :call C_InsertTemplate("statements.do-while")$/;"	m
+\sd	vimcpptest.vim	/^onoremap <buffer> <silent> \\sd :call C_InsertTemplate("statements.do-while")$/;"	m
+\sd	vimcpptest.vim	/^vnoremap <buffer> <silent> \\sd :call C_InsertTemplate("statements.do-while", "v")$/;"	m
+\se	vimcpptest.vim	/^inoremap <buffer> <silent> \\se :call C_InsertTemplate("statements.else-block")$/;"	m
+\se	vimcpptest.vim	/^nnoremap <buffer> <silent> \\se :call C_InsertTemplate("statements.else-block")$/;"	m
+\se	vimcpptest.vim	/^onoremap <buffer> <silent> \\se :call C_InsertTemplate("statements.else-block")$/;"	m
+\se	vimcpptest.vim	/^vnoremap <buffer> <silent> \\se :call C_InsertTemplate("statements.else-block", "v")$/;"	m
+\sf	vimcpptest.vim	/^inoremap <buffer> <silent> \\sf :call C_InsertTemplate("statements.for")$/;"	m
+\sf	vimcpptest.vim	/^noremap <buffer> <silent> \\sf :call C_InsertTemplate("statements.for")$/;"	m
+\sfo	vimcpptest.vim	/^inoremap <buffer> <silent> \\sfo :call C_InsertTemplate("statements.for-block")$/;"	m
+\sfo	vimcpptest.vim	/^nnoremap <buffer> <silent> \\sfo :call C_InsertTemplate("statements.for-block")$/;"	m
+\sfo	vimcpptest.vim	/^onoremap <buffer> <silent> \\sfo :call C_InsertTemplate("statements.for-block")$/;"	m
+\sfo	vimcpptest.vim	/^vnoremap <buffer> <silent> \\sfo :call C_InsertTemplate("statements.for-block", "v")$/;"	m
+\si	vimcpptest.vim	/^inoremap <buffer> <silent> \\si :call C_InsertTemplate("statements.if")$/;"	m
+\si	vimcpptest.vim	/^noremap <buffer> <silent> \\si :call C_InsertTemplate("statements.if")$/;"	m
+\sie	vimcpptest.vim	/^inoremap <buffer> <silent> \\sie :call C_InsertTemplate("statements.if-else")$/;"	m
+\sie	vimcpptest.vim	/^nnoremap <buffer> <silent> \\sie :call C_InsertTemplate("statements.if-else")$/;"	m
+\sie	vimcpptest.vim	/^onoremap <buffer> <silent> \\sie :call C_InsertTemplate("statements.if-else")$/;"	m
+\sie	vimcpptest.vim	/^vnoremap <buffer> <silent> \\sie :call C_InsertTemplate("statements.if-else", "v")$/;"	m
+\sif	vimcpptest.vim	/^inoremap <buffer> <silent> \\sif :call C_InsertTemplate("statements.if-block")$/;"	m
+\sif	vimcpptest.vim	/^nnoremap <buffer> <silent> \\sif :call C_InsertTemplate("statements.if-block")$/;"	m
+\sif	vimcpptest.vim	/^onoremap <buffer> <silent> \\sif :call C_InsertTemplate("statements.if-block")$/;"	m
+\sif	vimcpptest.vim	/^vnoremap <buffer> <silent> \\sif :call C_InsertTemplate("statements.if-block", "v")$/;"	m
+\sife	vimcpptest.vim	/^inoremap <buffer> <silent> \\sife :call C_InsertTemplate("statements.if-block-else")$/;"	m
+\sife	vimcpptest.vim	/^nnoremap <buffer> <silent> \\sife :call C_InsertTemplate("statements.if-block-else")$/;"	m
+\sife	vimcpptest.vim	/^onoremap <buffer> <silent> \\sife :call C_InsertTemplate("statements.if-block-else")$/;"	m
+\sife	vimcpptest.vim	/^vnoremap <buffer> <silent> \\sife :call C_InsertTemplate("statements.if-block-else", "v")$/;"	m
+\ss	vimcpptest.vim	/^inoremap <buffer> <silent> \\ss :call C_InsertTemplate("statements.switch")$/;"	m
+\ss	vimcpptest.vim	/^nnoremap <buffer> <silent> \\ss :call C_InsertTemplate("statements.switch")$/;"	m
+\ss	vimcpptest.vim	/^onoremap <buffer> <silent> \\ss :call C_InsertTemplate("statements.switch")$/;"	m
+\ss	vimcpptest.vim	/^vnoremap <buffer> <silent> \\ss :call C_InsertTemplate("statements.switch", "v")$/;"	m
+\sw	vimcpptest.vim	/^inoremap <buffer> <silent> \\sw :call C_InsertTemplate("statements.while")$/;"	m
+\sw	vimcpptest.vim	/^noremap <buffer> <silent> \\sw :call C_InsertTemplate("statements.while")$/;"	m
+\swh	vimcpptest.vim	/^inoremap <buffer> <silent> \\swh :call C_InsertTemplate("statements.while-block")$/;"	m
+\swh	vimcpptest.vim	/^nnoremap <buffer> <silent> \\swh :call C_InsertTemplate("statements.while-block")$/;"	m
+\swh	vimcpptest.vim	/^onoremap <buffer> <silent> \\swh :call C_InsertTemplate("statements.while-block")$/;"	m
+\swh	vimcpptest.vim	/^vnoremap <buffer> <silent> \\swh :call C_InsertTemplate("statements.while-block", "v")$/;"	m
+\s{	vimcpptest.vim	/^inoremap <buffer> <silent> \\s{ :call C_InsertTemplate("statements.block")$/;"	m
+\s{	vimcpptest.vim	/^nnoremap <buffer> <silent> \\s{ :call C_InsertTemplate("statements.block")$/;"	m
+\s{	vimcpptest.vim	/^onoremap <buffer> <silent> \\s{ :call C_InsertTemplate("statements.block")$/;"	m
+\s{	vimcpptest.vim	/^vnoremap <buffer> <silent> \\s{ :call C_InsertTemplate("statements.block", "v")$/;"	m
+endl	Main.cpp	/^		cout<<"m1 (2x2): "<<m1<<endl;$/;"	l
+endl	Main.cpp	/^		cout<<"m1 (2x3): "<<m1<<endl;$/;"	l
+endl	Main.cpp	/^		cout<<"m1 (2x3)=4: "<<m1<<endl;$/;"	l
+endl	Main.cpp	/^		cout<<"m1: "<<m1<<endl;$/;"	l
+endl	Main.cpp	/^		cout<<"m2 (3x2)=5: "<<m2<<endl;$/;"	l
+endl	Main.cpp	/^		cout<<"m2 (3x3): "<<m2<<endl;$/;"	l
+endl	Main.cpp	/^		cout<<"m2: "<<m2<<endl;$/;"	l
+endl	Main.cpp	/^		cout<<"m:     "<<m<<endl;$/;"	l
+endl	Main.cpp	/^		cout<<endl<<"Normal matrices can use zero matrices"<<endl;$/;"	l
+endl	Main.cpp	/^		cout<<endl<<"Swap the matrices"<<endl;$/;"	l
+endl	Main.cpp	/^		m1.resize(2, 3, false); cout<<"m1 resized back to 2x3 (data always preserved)"<<m1<<endl;$/;"	l
+endl	Main.cpp	/^		m1.resize(3, 2, false); cout<<"m1 resized to 3x2 (data always preserved)"<<m1<<endl;$/;"	l
+endl	Main.cpp	/^		m2.resize(2, false); cout<<"m2 resized to 2 (data always preserved)"<<m2<<endl;$/;"	l
+endl	Main.cpp	/^		m2.resize(3, false); cout<<"m2 resized back to 3 (data always preserved)"<<m2<<endl;$/;"	l
+gx	vimcpptest.vim	/^nmap gx <Plug>NetrwBrowseX$/;"	m
+main	Main.cpp	/^int main()$/;"	f	signature:()
+q	vimcpptest.vim	/^inoremap <buffer> <silent> q :close$/;"	m
+q	vimcpptest.vim	/^nnoremap <buffer> <silent> q :close$/;"	m
+s:cpo_save	vimcpptest.vim	/^let s:cpo_save=&cpo$/;"	v
+s:l	vimcpptest.vim	/^let s:l = 102 - ((18 * winheight(0) + 19) \/ 38)$/;"	v
+s:l	vimcpptest.vim	/^let s:l = 32 - ((18 * winheight(0) + 19) \/ 38)$/;"	v
+s:so_save	vimcpptest.vim	/^let s:so_save = &so | let s:siso_save = &siso | set so=0 siso=0$/;"	v
+s:sx	vimcpptest.vim	/^let s:sx = expand("<sfile>:p:r")."x.vim"$/;"	v
+s:wipebuf	vimcpptest.vim	/^  let s:wipebuf = bufnr('%')$/;"	v
+swap	Main.cpp	/^		m1.swap(m2);$/;"	p	file:	signature:(m2)
+zt	vimcpptest.vim	/^normal! zt$/;"	m
+{	vimcpptest.vim	/^inoremap <buffer> {$/;"	m
+{	vimcpptest.vim	/^vnoremap <buffer> {$/;"	m
+¤	vimcpptest.vim	/^imap ¤ $a$/;"	m
+°	vimcpptest.vim	/^imap ° 0i$/;"	m

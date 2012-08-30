@@ -1,0 +1,145 @@
+--- origsrc/libiodbc-3.52.7/iodbc/connect.c	2009-09-10 08:04:55.000000000 -0500
++++ src/libiodbc-3.52.7/iodbc/connect.c	2010-04-26 19:50:47.548737200 -0500
+@@ -2597,6 +2597,8 @@ SQLDriverConnect_Internal (
+ 	  if (libname)
+ 	    CFRelease (libname);
+ 	}
++#elif defined(__CYGWIN__)
++      hdll = _iodbcdm_dllopen ("cygiodbcadm-2.dll");
+ #else
+       hdll = _iodbcdm_dllopen ("libiodbcadm.so.2");
+ #endif
+--- origsrc/libiodbc-3.52.7/iodbc/install_libodbc.sh	2009-08-30 05:48:33.000000000 -0500
++++ src/libiodbc-3.52.7/iodbc/install_libodbc.sh	2010-06-04 12:39:11.210350000 -0500
+@@ -107,6 +107,10 @@ then
+     for lib in $library_names
+     do
+ 	case $lib in
++	libiodbc.dll.a)
++	    rm -f libodbc.dll.a
++	    ln -s $lib libodbc.dll.a
++	    ;;
+ 	libiodbc.so.*)
+ 	    rm -f libodbc.so
+ 	    ln -s $lib libodbc.so
+--- origsrc/libiodbc-3.52.7/iodbcadm/drvconn.c	2009-09-10 08:04:55.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcadm/drvconn.c	2010-04-26 19:51:28.469077700 -0500
+@@ -469,6 +469,8 @@ iodbcdm_drvconn_dialboxw (
+           CALL_DRVCONN_DIALBOXW (name, 'A');
+ 	}
+     }
++#elif defined(__CYGWIN__)
++  CALL_DRVCONN_DIALBOXW ("cygdrvproxy-2.dll", 'A');
+ #else
+   CALL_DRVCONN_DIALBOXW ("libdrvproxy.so.2", 'A');
+ #endif /* __APPLE__ */
+--- origsrc/libiodbc-3.52.7/iodbcadm/gtk/administrator.c	2009-09-10 08:04:55.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcadm/gtk/administrator.c	2010-04-26 19:52:47.448595100 -0500
+@@ -111,11 +111,19 @@ static struct
+   char *lib_ver_sym;
+ } iODBC_Components[] =
+ {
++#if defined(__CYGWIN__)
++  {"cygiodbc-2.dll", "iODBC Driver Manager", "iodbc_version"},
++  {"cygiodbcadm-2.dll", "iODBC Administrator", "iodbcadm_version"},
++  {"cygiodbcinst-2.dll", "iODBC Installer", "iodbcinst_version"},
++  {"cygdrvproxy-2.dll", "iODBC Driver Setup Proxy", "iodbcproxy_version"},
++  {"cygtranslator-2.dll", "iODBC Translation Manager", "iodbctrans_version"}
++#else
+   {"libiodbc.so.2", "iODBC Driver Manager", "iodbc_version"},
+   {"libiodbcadm.so.2", "iODBC Administrator", "iodbcadm_version"},
+   {"libiodbcinst.so.2", "iODBC Installer", "iodbcinst_version"},
+   {"libdrvproxy.so.2", "iODBC Driver Setup Proxy", "iodbcproxy_version"},
+   {"libtranslator.so.2", "iODBC Translation Manager", "iodbctrans_version"}
++#endif
+ };
+ 
+ 
+--- origsrc/libiodbc-3.52.7/iodbcinst/SQLConfigDataSource.c	2009-09-10 08:04:55.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcinst/SQLConfigDataSource.c	2010-04-26 19:53:28.072918700 -0500
+@@ -449,6 +449,15 @@ SQLConfigDataSource_Internal (HWND hwndP
+       if (libname)
+ 	CFRelease (libname);
+     }
++#elif defined(__CYGWIN__)
++  if (waMode == 'A')
++    {
++      CALL_CONFIG_DSN ("cygdrvproxy-2.dll");
++    }
++  else
++    {
++      CALL_CONFIG_DSNW ("cygdrvproxy-2.dll");
++    }
+ #else
+   if (waMode == 'A')
+     {
+--- origsrc/libiodbc-3.52.7/iodbcinst/SQLConfigDriver.c	2009-09-10 08:04:55.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcinst/SQLConfigDriver.c	2010-04-26 19:53:57.713614000 -0500
+@@ -369,6 +369,15 @@ SQLConfigDriver_Internal (HWND hwndParen
+       if (libname)
+ 	CFRelease (libname);
+     }
++#elif defined(__CYGWIN__)
++  if (waMode == 'A')
++    {
++      CALL_CONFIG_DRIVER ("cygdrvproxy-2.dll");
++    }
++  else
++    {
++      CALL_CONFIG_DRIVERW ("cygdrvproxy-2.dll");
++    }
+ #else
+   if (waMode == 'A')
+     {
+--- origsrc/libiodbc-3.52.7/iodbcinst/SQLCreateDataSource.c	2009-09-10 08:04:55.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcinst/SQLCreateDataSource.c	2010-04-26 19:54:23.828107700 -0500
+@@ -154,6 +154,15 @@ CreateDataSource (HWND parent, LPCSTR lp
+       if (libname)
+ 	CFRelease (libname);
+     }
++#elif defined(__CYGWIN__)
++  if (waMode == 'A')
++    {
++      CALL_DRVCONN_DIALBOX ("cygiodbcadm-2.dll");
++    }
++  else
++    {
++      CALL_DRVCONN_DIALBOXW ("cygiodbcadm-2.dll");
++    }
+ #else
+   if (waMode == 'A')
+     {
+--- origsrc/libiodbc-3.52.7/iodbcinst/SQLGetTranslator.c	2009-09-10 08:04:55.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcinst/SQLGetTranslator.c	2010-04-26 19:55:14.421001400 -0500
+@@ -171,6 +171,8 @@ GetTranslator (HWND hwndParent, LPSTR lp
+ 	  if (libname)
+ 	    CFRelease (libname);
+ 	}
++#elif defined(__CYGWIN__)
++      CALL_TRSCHOOSE_DIALBOX ("cygiodbcadm-2.dll");
+ #else
+       CALL_TRSCHOOSE_DIALBOX ("libiodbcadm.so.2");
+ #endif
+@@ -229,7 +231,11 @@ GetTranslator (HWND hwndParent, LPSTR lp
+ 	    }
+ 
+ 	  /* The last ressort, a proxy driver */
++#if defined(__CYGWIN__)
++	  CALL_CONFIG_TRANSLATOR ("cygtranslator-2.dll");
++#else
+ 	  CALL_CONFIG_TRANSLATOR ("libtranslator.so.2");
++#endif
+ 
+ 	  /* Error : ConfigDSN could no be found */
+ 	  PUSH_ERROR (ODBC_ERROR_LOAD_LIB_FAILED);
+--- origsrc/libiodbc-3.52.7/iodbcinst/SQLManageDataSource.c	2009-09-10 08:04:55.000000000 -0500
++++ src/libiodbc-3.52.7/iodbcinst/SQLManageDataSource.c	2010-04-26 19:55:34.893172400 -0500
+@@ -133,6 +133,8 @@ ManageDataSources (HWND hwndParent)
+ 	CFRelease (libname);
+     }
+ 
++#elif defined(__CYGWIN__)
++  CALL_ADMIN_DIALBOX ("cygiodbcadm-2.dll");
+ #else
+   CALL_ADMIN_DIALBOX ("libiodbcadm.so.2");
+ #endif

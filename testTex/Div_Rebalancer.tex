@@ -1,0 +1,183 @@
+\documentclass[12pt,letterpaper,twoside]{article}
+\usepackage[dvips]{graphics}
+ \usepackage{multirow}
+\usepackage[hmargin={0.8in,0.8in}]{geometry}
+\usepackage{amscd, epsfig,amssymb,euscript,subfigure}
+ \usepackage{amsmath}
+\usepackage{listings}
+\lstset{
+   basicstyle=6pt,                   % the size of the fonts that are used for the code
+   numbers=left,                           % where to put the line-numbers
+   numberstyle=\footnotesize,            % the size of the fonts that are used for the line-numbers
+   stepnumber=1,                            % the step between two line-numbers. If it's 1 each line will be numbered
+   numbersep=6pt,                        % how far the line-numbers are from the code
+%   backgroundcolor=\color{white},     % choose the background color. You must add \usepackage{color}
+   showspaces=false,                     % show spaces adding particular underscores
+   showstringspaces=false,               % underline spaces within strings
+   showtabs=false,                          % show tabs within strings adding particular underscores
+   frame=single,                            % adds a frame around the code
+%   tabsize=2,                            % sets default tabsize to 2 spaces
+%   captionpos=b,                            % sets the caption-position to bottom
+   breaklines=true,                         % sets automatic line breaking
+   breakatwhitespace=false,              % sets if automatic breaks should only happen at whitespace
+   escapeinside={\%*}{*)},                % if you want to add a comment within your code
+extendedchars=false,
+}
+\usepackage{subfig}
+\usepackage{pgf,pgfarrows,pgfnodes,pgfautomata,pgfheaps,pgfshade}
+\usepackage{tikz}
+\usepackage{graphicx}
+
+\begin{document}
+\title{Div\_Rebalancer Reference}
+ \author{Nick Yang Cai}
+ \date{\today}
+\maketitle
+\medskip
+\medskip
+\medskip
+\tableofcontents  % Write out the Table of Contents
+
+\newpage
+
+\section{Introduction}
+This document is a reference for the Div\_Reblancer project. We will go through the settings and logics of different features in the Div\_Rebalancer and ETF\&Cash management tool.
+
+\section{Rebalance Logic}
+\paragraph{} The rebalancer follows an adjusted-BuyUniverse-Capweighted methodology. The list below shows the detail steps during the rebalance. we will discuss each of the steps above in details in the follow sections.
+\begin{center}
+\begin{array}{c}
+    $Select proudct and the group of accounts to rebalance$\\
+    \downarrow\\
+    $Collecting User Input for each account(section \ref{input})$\\
+    \downarrow\\
+    $Collecting adjustment factors(section \ref{adj})$\\
+    \downarrow\\
+    $Adjsut Long/Short ratio and crossovers(section \ref{longshort})$\\
+    \downarrow \\
+    $Apply multi-account goalseek algorithm to get proposed portfolio(section \ref{goalseek})$\\
+\end{array}
+ \end{center} 
+ 
+\section{User Input}\label{input}
+\paragraph{}
+For each account selected in rebalancer, there are several basic user inputs need to be entered. Those inputs may be various in different accounts and should not be changed frequently. In the interface, the rebalancer will provide a configuration tab for each account, from where user can enter and change the inputs. Below is a list of the inputs:
+\begin{enumerate}
+\item \textbf{Cash Target Weight}
+\item \textbf{Cash Tolerance}
+\item \textbf{Weighting Method}
+\item \textbf{Crossover Handling Method}
+\item \textbf{Constraints}(section \ref{constraint})
+\end{enumerate}
+
+\subsection{Cash Target Weight and Cash Tolerance}\label{cash_tgt_tol}
+\paragraph{Cash Target Weight} 
+Currently each long account has CASH item. For each long account, rebalancer requires a target cash weight. During the rebalance, rebalancer trys to make the CASH weight equals to cash target weight. Currently, cash target weight is set to be $1\%$ for most accounts.
+\paragraph{Cash Tolerance} 
+
+\subsection{Weighting Method}\label{cash_tgt_wt}
+\subsection{Crossover Handling Method}\label{crossover}
+\subsection{Constraints}\label{cash_tgt_wt}
+
+\section{Adjustment Factors}\label{adj}
+\section{Long/Short Account Adjustment}\label{longshort}
+\section{Multi-Account GoalSeek}\label{goalseek}
+\section{Constraint}\label{constraint}
+%\addcontentsline{toc}{section}{Constraint}
+Here we discuss different type of Portfolio constraints that built in this Div\_Rebalancer tool.
+\paragraph{} The constraint categories listed in table \ref{constraintcategory} are current supported in the rebalancer. Each type of constraint has two potential functions
+\begin{enumerate}
+\item \textbf{Check} function only check the constraint after rebalance and returns user an alert indicating certain constraint was hit without doing any automatic adjustment in the rebalance.
+\item \textbf{Adjust} function check the constraint and return the alert during each iteration of rebalance.Also, it will adjust the portfolio allocation based on the routine that predefined. 
+\end{enumerate}
+ 
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|c|c|c|c|}
+\hline
+Category & \multicolumn{3}{c|}{\textbf{Single-Account}} & \multicolumn{3}{c|}{\textbf{Multiple-Account}}\\ \hline
+Type & \textbf{Stock}&\textbf{Sector} & \textbf{Industry} & \textbf{Stock}&\textbf{Sector} & \textbf{Industry}\\ \hline
+Check & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$ & $\surd$\\ \hline
+Adjust & $\surd$ &  &  & $\surd$ &  & \\ \hline
+\end{tabular}
+\caption{Constraint Categories}
+\label{constraintcategory}
+\end{center}
+\end{table}
+
+User can choose whether to do only constraint violation checking or auto\_apply the constraint adjustment in the interface.
+Also, user can choose whether to apply the constraint to all stocks, sectors, industries or just apply to a specific stock, sector, industry.Currently, the rebalancer only support auto\_apply adjustment for stock level constraint. Sector and industry level auto\_apply routine maybe launched later.
+
+\subsection{Single-Account Constraints}
+\paragraph{Description}
+Single-Account constraints are the constraints applied to one specific account. This type of constraint monitors the aggregation(sum, max,count,etc) of the stock, sector and industry level data within that account and made the appropriate adjustments.
+user can choose to apply a pure checking and return the alert signal or automatically apply adjustment to the portfolio when constraint was hit, using predefined routines.
+\subsubsection{Single-Account Stock Level Constraint}
+\paragraph{}
+Currently only one type of stock level Single-Account constraint is supported in the rebalancer:
+\begin{itemize}
+\item \textbf{Absolute max and min weight constraint}. This type of constraint applies to absolute value of stock weight($5\%$ max stock weight for example). This type of constraint requires  a floating number as input(0.05 for $5\%$), which will be the constraint weight.
+
+\paragraph{Check}
+During reabalance, for each stock, the rebalancer compares the stock adjusted buy-cap weight to the constraint weight. If the stock’s buy-cap weights exceeds the constraint weight, an alert will be returned to user. But \textbf{NO} adjustment will be made.
+
+\paragraph{Adjust} 
+To auto\_adjust this type of constraint, during each iteration, the rebalancer will first check those stocks that the constraint been applied to and reduce the weights of those overweighted stocks to a level that meet the constraint's requirement before calculating trading orders. For example, if there is a $5\%$ max stock weight constraint applied to all the stocks in the portfolio, the rebalancer will search those stocks have a adjust buy cap weight $\ge 5\%$  and reduce their weights to $5\%$. Then the trading orders will be calculated with the new after-adjusted weights.
+\end{itemize}
+\subsubsection{Single-Account Sector and Industry Level Constraint}
+\paragraph{}
+Currently, the rebalancer supports two types of sector and industry level Single-Account constraint, which are:
+\begin{itemize}
+\item \textbf{Absolute max and min weight constraint}. This type of constraint applies to absolute value of aggregated sector or industry  weight(40\% max sector weight for example). This constraint requires a floating number as input(0.4 for $40\%$), which is the constraint weight.
+\paragraph{Check} During reabalance, after one iteration, the rebalancer aggregates the stock weights for each sector and industry and compares the after-rebalance sector or industry weights to the constraint weight. If the after-rebalance weight of any sector or industry exceeds the constraint weight, an alert will be returned to user. But \textbf{NO} adjustment will be made.
+\item \textbf{Relative to benchmark max and min weight constraint}. This type of constraint applies to the difference between aggregated sector or industry weight in portfolio and their benchmark weights. A typical example of this type of constraint is: "Portfolio sector weights can not be $15\%$ over benchmark sector weights". The constraint also requires a floating number as input($15\%$ in the example).
+\paragraph{Check}
+During reabalance, after one iteration, the rebalancer aggregates the stock weights for each sector and industry and calculates the difference between the portfolio’s sector and industry weights and the corresponding benchmark weights. Then the rebalancer compares the calculated weights difference to the constraint weight. If the weight difference for any sector or industry exceeds the constraint limit, an alert will be returned to user. But \textbf{NO} adjustment will be made.
+\end{itemize}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Multi-Account Constraints}
+\paragraph{Description}
+Multi-Account constraints are the constraints applied to all the selected accounts in the same run. Those constraints monitor the aggregation(sum, max,count,etc) of stock,sector and industry level data across all those accounts and made the appropriate adjustments during the rebalance process.
+user can choose to apply a pure checking and return the alert signal or automatically apply adjustment to the portfolio when constraint was hit using predefined routines.
+\paragraph{}
+Multi-Account constraints are usually been applied after Single-Account constraints if there are any,since it requires information from all accounts at the same time while Single-Account constraint only affect the allocation of the account itself.
+
+\subsubsection{Liquidity Constraint} 
+Liquidity Constraint is a type of \textbf{stock} level constraint that limit the total amount of transaction across various accounts for individual stock(This constraint  is only applied to Buy and Short, but not to Cover and Sell). The rebalancer currently allows two types of liquidity definition.
+\begin{enumerate}
+\item A percentage of Market Cap(5 basis point for example)
+\item An absolute amount (\$10000000 for example)
+\end{enumerate}
+
+\paragraph{Check}
+For each stock, the rebalancer will calculate the two type of liquidity limit and take the minimum of the two(the one could be hit first) as the threshold for the specific stock. Then after each iteration during the rebalance, the rebalancer will aggregate the trading amount for each stock and compare the stock's trading amount to its own threshold(each stock may have different threshold) and if any stock hits constraint, rebalancer will return the warning information but will \textbf{NOT} make any adjustment.
+
+\paragraph{Adjust} 
+To auto\_adjust liquidity constraint, follow the same steps as above to find the stocks that hits the constraint and gives alert. Meanwhile, reduce the trading amount for this stock proportionally to its trading orders across each accounts.
+
+\paragraph{Other Considerations:}
+\begin{itemize}
+\item Both of the liquidity parameters need to be chosen carefully. A too small threshold may cause large percentage of trading amount been cut and sent back to cash. This will make the rebalancer harder to find the optimal solution. If the assets under different accounts are significantly different(1B vs 1M), too much liquidity adjustment could cause a suboptimal cash target weight.
+This is because internally, the scaling factor for each account in GoalSeek is different. The shares in big accounts will determine whether to trigger the liquidity adjustment, smaller account may be forced to adjust their portfolio in a non-favor direction.
+\item We stress tested different combination of parameters. The results shows for each product, there are minimum acceptable level of each parameters listed in table \ref{liquidityparatest}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|c|c|c|}
+\hline
+\textbf{Product} & \textbf{\% of MCAP} & \textbf{\$ amount}\\
+\hline
+Div\_Large & 0.05\% & \$10000000\\ \hline
+Dynamic &  & \\ \hline
+Small Cap & & \\ \hline
+\end{tabular}
+\caption{Liquidity Parameters}
+\label{liquidityparatest}
+\end{center}
+\end{table}
+\end{itemize}
+% \newpage
+ %\appendix  % Cue to tell LaTeX that the following 'chapters' are Appendices
+ %\input{./AppendixA} % Appendix Title
+
+\end{document}

@@ -1,0 +1,22 @@
+\contentsline {section}{\numberline {1}Introduction}{2}
+\contentsline {subsection}{\numberline {1.1}Files and folders needed}{2}
+\contentsline {section}{\numberline {2}Rebalance Process}{2}
+\contentsline {paragraph}{}{2}
+\contentsline {paragraph}{}{3}
+\contentsline {subsection}{\numberline {2.1}Open rebalancer and download FactSet screen}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {subsection}{\numberline {2.2}Cash Target Weight and Cash Tolerance}{3}
+\contentsline {paragraph}{Generate Buy/Sell/Hold List}{3}
+\contentsline {paragraph}{Buy and sell List}{3}
+\contentsline {paragraph}{}{3}
+\contentsline {subsection}{\numberline {2.3}Adjust Buy\_Sell List based on Fundamental Review }{4}
+\contentsline {paragraph}{}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {subsection}{\numberline {2.4}Run weights Optimization}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {subsection}{\numberline {2.5}Generate Orders}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {subsection}{\numberline {2.6}Save Spreadsheet}{4}
+\contentsline {section}{\numberline {3}Short Rebalancer}{4}
+\contentsline {paragraph}{}{4}
+\contentsline {section}{\numberline {4}Generate Backup Screens}{5}

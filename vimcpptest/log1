@@ -1,0 +1,2 @@
+g++  -I/home/Nick/Libraries/boost_1_48_0/ -g -O0 -Werror -Wall -W -Wshadow -fno-common -c Main.cpp -o Main.o
+make_test.mak:148: recipe for target `Main.o' failed

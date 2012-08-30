@@ -1,0 +1,591 @@
+--- origsrc/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/README	1970-01-01 01:00:00.000000000 +0100
++++ src/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/README	2012-06-20 19:01:54.215260300 +0100
+@@ -0,0 +1,466 @@
++xorg-server
++------------------------------------------
++X.Org servers
++
++Runtime requirements:
++  cygwin-1.7.5-1
++  libbz2_1-1.0.5-10
++  libfontenc1-1.0.5-1
++  libfreetype6-2.3.12-1
++  libgcc1-4.3.4-3
++  libgcrypt11-1.4.1-4
++  libGL1-7.6.1-1
++  libpixman1_0-0.21.8-1
++  libX11_6-1.3.3-1
++  libXau6-1.0.5-1
++  libXdmcp6-1.0.3-1
++  libXext6-1.1.2-1
++  xauth-1.0.4-1
++  xcursor-themes-1.0.2-1
++  xkbcomp-1.0.6-1
++  xkeyboard-config-1.9-1
++  zlib0-1.2.3-10
++(dmx)
++  libdmx1-1.1.0-1
++  libXaw7-1.0.7-1
++  libXfixes3-4.0.5-1
++  libXi6-1.3.2-1
++  libXmu6-1.0.5-1
++  libXmuu1-1.0.5-1
++  libXrender1-0.9.6-1
++  libXt6-1.0.8-1
++
++Build requirements:
++(besides corresponding devel packages)
++  autoconf2.5-2.65-1
++  automake1.11-1.11.1-1
++  binutils-2.20.51-2
++  cygport-0.9.88-1
++  gawk-3.1.7-1
++  gcc4-core-4.3.4-3
++  libtool-2.2.7a-15
++  make-3.81-2
++  pkg-config-0.23b-10
++  sed-4.2.1-1
++  w32api-3.14-1
++
++  bigreqsproto-1.1.0-1
++  compositeproto-0.4.1-1
++  damageproto-1.2.0-1
++  dmxproto-2.3-1
++  fixesproto-4.1-1
++  font-util-1.1.1-1
++  fontsproto-2.1.0-1
++  glproto-1.4.14-1
++  inputproto-2.2-1
++  kbproto-1.0.4-1
++  libXfont-devel-1.4.5-1
++  randrproto-1.3.1-1
++  recordproto-1.14-1
++  renderproto-0.11-1
++  resourceproto-1.1.0-1
++  scrnsaverproto-1.2.0-1
++  windowswmproto-1.0.4-1
++  xcmiscproto-1.2.0-1
++  xextproto-7.2.0-1
++  xf86bigfontproto-1.2.0-1
++  xineramaproto-1.2-1
++  xorg-util-macros-1.17-1
++  xproto-7.0.22-1
++  xtrans-1.2.5-1
++
++Canonical website:
++  http://xorg.freedesktop.org/
++
++Canonical download:
++  http://xorg.freedesktop.org/releases/individual/xserver/
++
++-------------------------------------------
++
++Build instructions:
++  unpack xorg-server-N.N.N-N-src.tar.bz2
++    if you use setup to install this src package, it will be
++	 unpacked under /usr/src automatically
++  cd /usr/src
++  cygport ./xorg-server-N.N.N-N.cygport all
++
++This will create:
++  /usr/src/xorg-server-N.N.N-N-src.tar.bz2
++  /usr/src/xorg-server-N.N.N-N.tar.bz2
++  /usr/src/xorg-server-dmx-N.N.N-N.tar.bz2
++
++-------------------------------------------
++
++Port Notes:
++
++----- version 1.12.2-1 -----
++Version bump.
++- Fix a merge error with 1.12.1, which made OpenGL non-functional in non-toplevel windows in WGL mode
++- Ensure full styling is properly applied when the window is first shown
++
++----- version 1.12.1-2 -----
++- Fix wrapper code generation, so OpenGL is functional again in WGL mode
++- Increase the timeout the xorg-backtrace script uses for gdb from 5 to 60 seconds
++
++----- version 1.12.1-1 -----
++Version bump.
++- Patch to enable upstream code to run an external crash reporting tool and capture output to log
++- Include a simple xorg-backtrace script which tries to use gdb to generate a backtrace
++
++----- version 1.12.0-5 -----
++- Fix crash in icon conversion if icon_pixmap is invalid
++- Revert "Load swrastg if GALLIUM_DRIVER environment variable is set"
++- Log stdout and stderr for processes started from the notification area icon
++
++----- version 1.12.0-4 -----
++- Fix multiple monitors support
++- If a window has had its taskbar button removed, disable its minimize button to prevent it becoming lost
++
++----- version 1.12.0-3 -----
++- Various fixes to WM_HINTS bitmap icon conversion
++- Crash fix to icon regeneration on XWinrc reload
++
++----- version 1.12.0-2 -----
++- Move Xephyr, Xfake, Xnest and Xvfb servers to a separate package
++- Build the xorg server
++- Add devel package, which contains the xorg driver sdk
++- In multiwindow mode, the native window icon now updates if the X window
++_NEW_WM_ICON icon hint changes
++- In multiwindow mode, the native window styling now updates if the X window
++styling hints change
++- The _NET_WM_STATE_SKIP_TASKBAR hint is now implemented in multiwindow mode
++- A crash caused by a race condition in the conversion of the window icon from
++an X property to a Windows icon has been fixed (Reported by Ken Brown)
++- In multiwindow mode, the native window now flashes on the taskbar if the X
++window's urgency hint is set
++0 A bug which could cause the X server to use 100% of a core while waiting for
++the X clipboard contents to be converted has been fixed [1]
++- Fake XINERAMA data is now generated describing the native monitors when
++multiplemonitor mode is enabled, allowing XINERAMA-aware X applications to
++correctly place their windows so they don't get split between monitors.
++- A couple of timing-sensitive failures in clipboard handling have been fixed.
++- Lots of debugging improvements, correctness changes and obsolete cruft removed.
++
++----- version 1.12.0-1 -----
++Version bump.
++
++----- version 1.11.4-5 -----
++- Reverted clipboard change in 1.11.4-4, it broke copying from native Firefox into a cygwin
++X emacs window, somehow.
++
++----- version 1.11.4-4 -----
++- Remove useless /usr/adm/Xnmsgs functionality, so it doesn't trample on one of our listener
++sockets if we start with stderr closed, causing XWin to spin on Cygwin 1.7.10
++- Empty the Windows clipboard when X loses focus.  This should allow us to notice when the
++selection changes, but the selection owner has not, at the cost of emptying the clipboard if
++the selection was not changed while X has the focus.
++
++----- version 1.11.4-3 -----
++- Fall back to mesa software rendering rather than using the GDI Generic native renderer
++- Synchronize the indirect function dispatch table offsets with mesa 7.11
++- Use shared libglapi for dispatch table
++
++----- version 1.11.4-2 -----
++- Fix a crash in -wgl mode when the WGL_ARB_extensions_string extension is not supported
++
++----- version 1.11.4-1 -----
++Version bump.
++- Enable RANDR resize (option -resize) by default
++- Enable AIGLX (option -wgl) by default
++- Ignore bogus WM_DISPLAYCHANGE messages that have 0 bpp
++- Avoid WIN_WINDOW_PROP races which could cause a crash during Windows window destruction
++- Restore modifier key state when an X window gains focus
++- RANDR resize didn't occur, in windowed mode, with option -resize, when the window was maximized or restored
++- Fix rrScreenSetSize function pointer mismatch
++- Add Windows 8 to the list of Windows versions we know the name of
++
++----- version 1.11.3-1 -----
++Version bump.
++- Add experimental option -hostintitle which adds remote hostname to multiwindow mode window
++titles.
++
++----- version 1.11.2-1 -----
++Version bump.
++- Use spawnl() instead of pipe() & fork() to invoke xkbcomp
++
++----- version 1.11.1-1 -----
++Version bump.
++- Make XWin support the same XKB private actions for grab debugging as XOrg
++- Minimize redraw events after resizing/moving windows in multiwindow mode
++- Fix AltGr key sometimes firing an additional Ctrl-L key on non-US keyboards
++- Handle some more Motif window decoration hints
++
++----- version 1.10.3-1 -----
++Version bump.
++- On W7, use SHGetPropertyStoreForWindow() to set the System.AppUserModel.Id property in the
++IPropertyStore object for a window to a string containing the X window classname, so the taskbar
++can more correctly group windows belonging to the same X application
++
++----- version 1.10.2-2 -----
++- Ensure temporary file used to invoke xkbcomp is always removed
++- Handle the virtual key code generated by the Fn key on IBM Lenovo laptops
++
++----- version 1.10.2-1 -----
++Version bump.
++- Automatically activate the -nolock option if /tmp is on a FAT filesystem
++- Automatically activate the -emulate3buttons option if less than 3 mouse buttons are reported
++- Add -noemulate3buttons option
++- Use system() rather than pipe() & fork() to invoke xkbcomp
++- If GALLIUM_DRIVER env var is set, load swrastg rather than swrast
++- In -wgl mode, create a new dispatch table, rather than modifying the existing one to avoid a GLX crash
++
++----- version 1.10.1-1 -----
++Version bump.
++- Report if OS is WoW64 or not when reporting OS version
++- Fix WM_ENDSESSION handling
++- Remove _TrackMouseEvent pre-NT4 compatibility cruft
++- Add an item to open the logfile to the default tray icon menu
++- Allow XScreenSaverSuspend() to effect Windows screen saver or monitor power off
++- Bug fixes for screen sizing when the screen window is on a non-primary monitor
++- In multiwindow mode, don't grab native input focus for new windows which hint they don't want it
++
++----- version 1.10.0-1 -----
++Version bump.
++- Fix clipboard integration when XSupportsLocale() fails by setting a known good locale
++- Report XLocaleNotSupported result from X*TextPropertyToTextList()
++- When using -from option, only the specified address is sent in the XDMCP REQUEST
++- Tidy up OS version detection and reporting
++- Don't bother reporting XORG_VERSION_CURRENT
++- Remove some uninformative, always emitted log output
++- Handle failure of winScreenInit() during startup without crashing
++- Configure with --disable-glx-tls as default has changed from disabled to enabled if platform has TLS
++
++----- version 1.9.4-1 -----
++Version bump.
++- Handle failure to get any GLX fbConfigs more gracefully: If we didn't
++get any useful pixel formats from WGL_ARB_pixel_format, fall back
++to using DescribePixelFormat().  If that doesn't give us any useful
++pixel formats, fallback to software rendering.
++- Decorate function pointers retrieved via GetProcAddress which are currently
++missing it with WINAPI, so stdcall ABI is used.  This fixes a crash currently
++seen when -screen option uses a size and monitor number e.g. -screen 0 1280x1000@2
++
++----- version 1.9.3-2 -----
++- Fix a crash which occurred using indirect rendering with some OpenGL applications e.g. ParaView by synchronizing
++the indirect function dispatch table offsets with the current Mesa (7.8).  The need for this synchronization is an
++unfortunate consequence of the way we currently work around some linkage problems with Mesa due to PE/COFF limitations.
++
++----- version 1.9.3-1 -----
++Version bump.
++- Explicitly configure to use libgcrypt SHA1 implementation, rather than picking one depending on build environment,
++so setup.hint dependencies are correct
++- In WGL mode, handle GLX windows being reparented from a mapped window to an unmapped window correctly.
++
++----- version 1.9.2-1 -----
++Version bump.
++- Rewrite of the way clipboard thread is started, which should improve clipboard robustness in XDMCP sessions
++- Fix clipboard interaction with nxproxy (and possibly other X clients)
++- Various clipboard improvements
++- Fix WM_DISPLAYCHANGE handling in windowed mode to not resize the X screen
++- Don't write list email address into log
++- Fix random DPI after resize
++- Implement WGL AIGLX for non-toplevel X windows
++
++----- version 1.9.0-2 -----
++- Fix a regression with window placement: Windows which remember their
++position were drifting towards the bottom-right with each appearance
++- Move log files to /var/log/xwin, which is created mode 0777, to avoid
++logging failures in multiuser setups
++
++----- version 1.9.0-1 -----
++Version bump.
++Added patches:
++- fix a clipboard-related crash during XDMCP session startup
++- added Turkish keyboard layout detection.
++- add -displayfd option (experimental)
++- crash fixes for -resize
++- enable AIGLX code and -wgl option which has been merged upstream,
++and various GLX fixes
++
++----- version 1.8.2-1 -----
++Version bump.
++Support for RANDR display resizing was added.  In windowed mode, this
++requires the XWin -resize option; in multiwindow mode, the display will
++automatically resize to match a change in Windows display resolution.
++Additional patches:
++- Generate X keycodes for multimedia keys.
++- Update mapping for Canadian keyboard layouts.
++- Add -resize command line option.
++- Internal WM workaround for Java AWT bug.
++- Fix a GDI bitmap resource leak of window icons.
++- Store pthread_ids and chain IOError handlers to avoid longjmp across threads.
++- Make select() poll and not block if there are unprocessed Windows messages.
++- Better keyboard debugging output.
++- Show any fatal error message.
++
++----- version 1.8.0-1 -----
++Version bump.
++Dependency on openssl replaced by libgcrypt.
++Added patches:
++- Make default DPI match Windows' DPI setting (usually 96).
++- Process one Windows message per wakeup, rather than all of them:
++  http://cygwin.com/ml/cygwin-xfree/2010-01/msg00056.html
++
++----- version 1.7.6-2 -----
++Added patch:
++- Silence erroneous "/tmp mounted in textmode" warning.
++
++----- version 1.7.6-1 -----
++Version bump.
++RECORD extension fixed and reenabled.
++
++----- version 1.7.5-1 -----
++Version bump.
++Composite extension fixed and reenabled.
++Added patches:
++- Added XWinrc FORCEEXIT option to exit without asking for confirmation.
++- If system.XWinrc is malformed, ignore it and try ~/.XWinrc.
++- Added builtin menu configuration if no XWinrc is found.
++- Remove logfile before writing to it.  This is a partial workaround for 
++  logging failures in multiuser setups.
++- /etc/X11/system.XWinrc will not be uninstalled if modified.
++
++----- version 1.7.3-1 -----
++Version bump.
++Composite extension is temporarily disabled until fixed upstream.
++Added patches:
++- Restore -nolock option.
++- Allow resizing of transient windows.
++- Avoid log spam from Fedora 12 wait cursor.
++- Avoid server termination when XDMCP kills internal clipboard manager.
++  Clipboard integration will not be available but the session will continue.
++
++----- version 1.7.1-3 -----
++Added patch:
++- Don't crash if conversion of window name to UTF-8 fails.
++- Discourage other window managers from starting when in multiwindow mode.
++
++----- version 1.7.1-2 -----
++Added patches:
++- Don't exit with error if locale is not supported by X11.
++- Update and better organize options in -help output and XWin(1) manpage.
++
++----- version 1.7.1-1 -----
++Version bump for X11R7.5.
++Added DMX server and clients as separate package.
++Restored support for XFree86-BigFont extension.
++Support for Record extension has been temporarily disabled upstream.
++
++----- version 1.6.5-1 -----
++Version bump.
++Added patches:
++- Fix UT8String and CompoundText clipboard text sharing.
++- Workaround for SWF/Motif bug in multiwindow mode.
++- Tidy up system.XWinrc.
++
++----- version 1.6.4-1 -----
++Version bump.
++Reverted patch:
++- Use bash login shell to execute the commands started from the tray menu.
++  This could cause lengthly delays in launching programs depending on the 
++  contents of the user's .bash_profile.  Instead, xinit-1.1.1-5 launches
++  XWin itself in a login shell, which should have the same effect.
++
++----- version 1.6.3-1 -----
++Version bump.
++Added patch:
++- NET_WM_ICON converters should not use icon alpha on Win2K or <32-bit display.
++
++----- version 1.6.2-2 -----
++Added patches:
++- Always use an authorization cookie for internal clients (fixes clipboard
++  integration in XDMCP sessions).
++- Ensure WM_STATE atom exists in multiwindow mode (fixes BadAtom errors
++  with Solaris X clients).
++- Fix issue with X window menus sometimes appearing beneath the window
++  which activated it.
++- The -logverbose option now affects the verbosity of both the logfile and
++  the console output.
++- Add timestamps to logfile messages.
++
++----- version 1.6.2-1 -----
++Version bump.
++Added patch:
++- Use bash login shell to execute the commands started from the tray menu.
++
++----- version 1.6.1.902-1 -----
++Version bump.
++Added patches:
++- Enable clipboard integration by default, can be disabled with -noclipboard.
++- Fixed crash caused by IPv6 interfaces with no broadcast address.
++
++----- version 1.6.0-10 -----
++Version bump, built for Cygwin 1.7.
++Added patches:
++- added Hebrew keyboard layout detection.
++- even more clipboard debugging messages.
++- fixed numeric keypad input.
++- reverted upstream clipboard change that wreaked havoc with other
++  applications monitoring the clipboard (e.g. MS Office Clipboard, VNC).
++
++----- version 1.5.3-7 -----
++Enabled Xinerama support in rooted and -rootless modes only
++(NOT multiwindow or mwextwm for now).
++Added patches:
++- fixed Latin American (latam) keyboard layout detection
++- remainder of Xming patch 15 (clipboard issues)
++- additional clipboard debugging messages
++- fix for flickering when resizing in multiwindow
++- removed obsolete references to -co flag from Xserver manpage.
++
++----- version 1.5.3-6 -----
++Rebuilt with libXfont-1.3.4 to fix problems with the builtin fonts.
++
++----- version 1.5.3-5 -----
++Restored WindowsWM ("-mwextwm") support for use with xwinwm.
++Added patches:
++- Allow pointer warping to work in multiwindow and rootless modes;
++- Fixed keyboard layouts for nation-specific locales;
++- Fixed long-broken -silent-dup-error option;
++- Force keyboard state onto Virtual Core Keyboard on server startup;
++- Generate scan codes for fake keypresses from speech recognizers;
++- Improve mouse tracking for moving/resizing undecorated windows;
++- Reduce mouse polling interval to 50ms;
++
++----- version 1.5.3-4 -----
++Fix crashing of remote GLX clients built against earlier GLX versions.
++Restore NumLock/CapsLock synchronization.
++
++----- version 1.5.3-3 -----
++Multiwindow mode fix:
++- Windows which remember their placement don't drift on each instance;
++Multihead fixes:
++- Windows don't appear offscreen when the primary monitor isn't upper-left.
++- XWin dialogs are placed near the tray icon.
++Numerous clipboard fixes.
++Built-in fonts are used by default; server-side fonts remain available.
++Temporary workaround for NumLock/CapsLock sync issues.
++Individual logs for each display (e.g. /var/log/XWin.0.log).
++
++----- version 1.5.3-2 -----
++Additional fixes to multiwindow mode:
++- Qt4 program icons display correctly;
++- Window geometry take window decorations into account;
++- Shaped window decorations do not appear and disappear.
++Moved system.XWinrc to /etc/X11.
++Moved XWin.log to /var/log.
++Fixed up man pages.
++Added patch to fix build when Xv is disabled and videoproto not installed.
++
++----- version 1.5.3-1 -----
++Version bump.
++Added Xfake server.
++
++----- version 1.5.2-1 -----
++Version bump for X11R7.4.
++Incorporated several patches from the Xming project and from Jon Turney.
++Removed support for several obsolete X extensions.
++Added EXPERIMENTAL Composite support.
++
++----- version 1.3.0.0-1 -----
++Initial Cygwin release of modular X11R7.
++Many thanks to Jon Turney for the patches to get this working.
++
++
++Cygwin port maintained by:
++http://x.cygwin.com/
+--- origsrc/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/common.hint	1970-01-01 01:00:00.000000000 +0100
++++ src/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/common.hint	2012-06-20 19:04:50.637135300 +0100
+@@ -0,0 +1,5 @@
++category: X11
++requires: dri-drivers xauth xcursor-themes xkbcomp xkeyboard-config
++external-source: xorg-server
++sdesc: "X.Org X server common data"
++ldesc: "X.Org X server common data"
+--- origsrc/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/debuginfo.hint	1970-01-01 01:00:00.000000000 +0100
++++ src/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/debuginfo.hint	2012-06-20 19:04:50.652760300 +0100
+@@ -0,0 +1,5 @@
++category: X11
++requires:
++external-source: xorg-server
++sdesc: "X.Org X servers (debug symbols)"
++ldesc: "X.Org X servers (debug symbols)"
+--- origsrc/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/devel.hint	1970-01-01 01:00:00.000000000 +0100
++++ src/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/devel.hint	2012-06-20 19:04:50.715260300 +0100
+@@ -0,0 +1,5 @@
++category: X11
++requires: libpixman1-devel fontsproto inputproto kbproto randrproto renderproto xextproto xineramaproto xproto xorg-server
++external-source: xorg-server
++sdesc: "X.Org SDK for developing drivers and extensions for the Xorg X server"
++ldesc: "X.Org SDK for developing drivers and extensions for the Xorg X server"
+--- origsrc/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/dmx.hint	1970-01-01 01:00:00.000000000 +0100
++++ src/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/dmx.hint	2012-06-20 19:04:50.746510300 +0100
+@@ -0,0 +1,5 @@
++category: X11
++requires: libbz2_1 libdmx1 libfontenc1 libfreetype6 libgcrypt11 libpixman1_0 libX11_6 libXau6 libXaw7 libXdmcp6 libXext6 libXfixes3 libXi6 libXmu6 libXmuu1 libXrender1 libXt6 xorg-server-common zlib0
++external-source: xorg-server
++sdesc: "X.Org DMX server and clients"
++ldesc: "X.Org DMX server and clients"
+--- origsrc/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/extra.hint	1970-01-01 01:00:00.000000000 +0100
++++ src/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/extra.hint	2012-06-20 19:04:51.043385300 +0100
+@@ -0,0 +1,5 @@
++category: X11
++requires: libbz2_1 libfontenc1 libfreetype6 libgcrypt11 libglapi0 libpixman1_0 libX11_6 libXau6 libXdmcp6 libXext6 xorg-server-common zlib0
++external-source: xorg-server
++sdesc: "X.Org Xephyr, Xfake, Xnest and Xvfb servers"
++ldesc: "X.Org Xephyr, Xfake, Xnest and Xvfb servers"
+--- origsrc/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/setup.hint	1970-01-01 01:00:00.000000000 +0100
++++ src/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/setup.hint	2012-06-20 19:04:51.184010300 +0100
+@@ -0,0 +1,4 @@
++category: X11
++requires: bash libbz2_1 libfontenc1 libfreetype6 libgcrypt11 libglapi0 libpixman1_0 libX11_6 libXau6 libXdmcp6 xf86-video-dummy xf86-video-nested xorg-server-common zlib0
++sdesc: "X.Org X servers"
++ldesc: "X.Org X servers"
+--- origsrc/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/xorg-backtrace	1970-01-01 01:00:00.000000000 +0100
++++ src/xserver-cygwin-1.12.2-1/CYGWIN-PATCHES/xorg-backtrace	2012-06-20 19:01:54.277760300 +0100
+@@ -0,0 +1,72 @@
++#!/usr/bin/perl
++#
++# script for creating a backtrace on crash
++# based on http://lists.x.org/archives/xorg-devel/2010-October/013814.html
++#
++
++$timeout = 60;
++$xtracmds= "/etc/X11/xorg-backtrace-cmds";
++
++
++$pid=$ARGV[0];
++if ($pid == 0) {
++    print "Usage: $0 <pid>\n";
++    exit 1;
++}
++
++
++if (! -e "/usr/bin/gdb") {
++    print "Install gdb to get reasonable backtraces\n";
++    exit 2;
++}
++
++$SIG{ALRM} = sub { die "timeout starting gdb" };
++alarm $timeout;
++
++open STDERR, ">&STDOUT";
++
++use FileHandle;
++use IPC::Open2;
++$gdb = open2 (*R, *W, "/usr/bin/gdb -n -p $pid");
++
++$SIG{ALRM} = sub { kill QUIT, $gdb; sleep 1; kill KILL, $gdb; die "timeout using gdb" };
++alarm $timeout;
++
++
++print "\n==================== GDB Backtrace ============\n\n";
++
++print W "set prompt\necho \\n===info\\n\n";
++print W "thread apply all bt full\necho ===btend\\n\n";
++
++$_=<R>;			# GNU gdb version
++print;
++
++while (<R>) {
++    last if /^===info/;
++    print if /^This GDB was configured as/;
++}
++
++print "\n==================== Backtrace ================\n";
++$fno = "";
++$fls = 0;
++$o   = "";
++$use = 0;
++while (<R>) {
++    last if /^===btend/;
++    print $_;
++}
++
++if (-e $xtracmds) {
++    print W "source -v $xtracmds\necho ===cmds\\n\n";
++    print "\n==================== Extra Commands ===========\n\n";
++    while (<R>) {
++	last if /^===cmds/;
++	print unless /^\+echo ===cmds/;
++    }
++}
++
++print "\n==================== Backtrace End ============\n\n";
++close R;
++close W;
++
++exit 0;
