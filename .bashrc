@@ -45,11 +45,17 @@ else
 fi
 
 # source bash_profile
-source "${HOME}/.bash_profile"
+#source "${HOME}/.bash_profile"
 
 function mountsf {
-sudo mount -t vboxsf cygwin /host
-sudo mount -t vboxsf F_DRIVE /F_Drive
-sudo mount -t vboxsf Top1000file /Top_1000_Unvierse
+#sudo mount -t vboxsf cygwin /host
+sudo mount -t vboxsf  D_DRIVE ~/D_Drive
+#sudo mount -t vboxsf Top1000file /Top_1000_Unvierse
 }
 mountsf
+
+export PERL_LOCAL_LIB_ROOT="/home/nick/perl5";
+export PERL_MB_OPT="--install_base /home/nick/perl5";
+export PERL_MM_OPT="INSTALL_BASE=/home/nick/perl5";
+export PERL5LIB="/home/nick/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/nick/perl5/lib/perl5";
+export PATH="/home/nick/perl5/bin:$PATH";
