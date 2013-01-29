@@ -1,0 +1,14 @@
+inherit xorg
+
+PATCH_URI="1.4-font-matching.patch"
+
+PKG_NAMES="${PN} ${PN}_6 ${PN}-devel ${PN}-xcb1 ${PN}-xcb-devel"
+PKG_HINTS="setup runtime devel xcb xcb-devel"
+libX11_6_CONTENTS="usr/bin/cygX11-6.dll usr/lib/X11/ usr/share/X11/ usr/share/doc/"
+libX11_devel_CONTENTS="--exclude=*-xcb.* usr/include/ usr/lib/lib*
+                       usr/lib/pkgconfig/ usr/share/man/"
+libX11_xcb1_CONTENTS="usr/bin/cygX11-xcb-1.dll"
+libX11_xcb_devel_CONTENTS="usr/include/X11/Xlib-xcb.h usr/lib/libX11-xcb.*
+                           usr/lib/pkgconfig/x11-xcb.pc"
+
+CYGCONF_ARGS="--without-launchd"

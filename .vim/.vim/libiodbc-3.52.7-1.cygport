@@ -1,0 +1,29 @@
+
+
+HOMEPAGE="http://www.iodbc.org/"
+SRC_URI="http://www.iodbc.org/downloads/iODBC/${P}.tar.gz"
+
+PATCH_URI="
+	3.52.7-cdecl-stdcall-warnings.patch
+	3.52.7-cygwin-dllname.patch
+	3.52.7-no-undefined.patch
+	3.52.7-parallel-make.patch
+	3.52.7-stricmp.patch
+	3.52.7-xpm.patch
+"
+
+PKG_NAMES="${PN} libiodbc2 libiodbc-devel iodbctest iodbcadm-gtk"
+libiodbc2_CONTENTS="--exclude=*iodbcadm* usr/bin/*-2.dll usr/share/doc/"
+libiodbc_devel_CONTENTS="--exclude=*drvproxy* usr/bin/*-config usr/include/ usr/lib/
+                         usr/share/man/man1/*-config.*"
+iodbctest_CONTENTS="usr/bin/iodbctest* usr/share/${PN} usr/share/man/man1/iodbctest*"
+iodbcadm_gtk_CONTENTS="usr/bin/*iodbcadm* usr/lib/*drvproxy* usr/share/applications/
+                       usr/share/man/man1/iodbcadm* usr/share/pixmaps/"
+
+src_install() {
+	cd ${B}
+	cyginstall
+
+	newicon ${S}/iodbcadm/gtk/odbc4.xpm iodbc.xpm
+	make_desktop_entry iodbcadm-gtk "ODBC Data Source Administrator" iodbc "Development;Database"
+}

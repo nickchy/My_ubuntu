@@ -1,0 +1,17 @@
+These are predefined by gcc and therefore cause endless redefinition warnings.
+
+--- origsrc/libiodbc-3.52.7/include/iodbcunix.h	2009-08-30 05:48:32.000000000 -0500
++++ src/libiodbc-3.52.7/include/iodbcunix.h	2010-06-08 20:03:59.488448000 -0500
+@@ -98,8 +98,12 @@
+ #define PASCAL
+ #define VOID			void
+ #define CALLBACK
++#ifndef _cdecl
+ #define _cdecl
++#endif
++#ifndef __stdcall
+ #define __stdcall
++#endif
+ 
+ 
+ /*
