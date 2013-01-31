@@ -854,8 +854,8 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    """"""""""""""""""""""""""""""
    " FSwitch setting
    """"""""""""""""""""""""""""""
-   au! BufEnter *.cc,*.cpp, *.tpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
-   au! BufEnter *.h,*.hpp let b:fswitchdst = 'cc,cpp,tpp' | let b:fswitchlocs = '.'
+   au! BufEnter *.cc,*.cpp let b:fswitchdst = 'h,hpp' | let b:fswitchlocs = '.'
+   au! BufEnter *.h,*.hpp let b:fswitchdst = 'cc,cpp' | let b:fswitchlocs = '.'
    let g:fsnonewfiles = "on"
    nmap <silent> <Leader>of :FSHere<cr>
 
@@ -905,7 +905,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    """""""""""""""""""""""""""""""
    autocmd FileType c,cpp,xml  map <buffer> <leader><space> :make<cr>
    autocmd FileType c,cpp,tpp  setl foldmethod=syntax | setl fen
-   au FileType cpp,tpp,hpp,h set syntax=cpp 
+   au FileType cpp,hpp,h set syntax=cpp 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
