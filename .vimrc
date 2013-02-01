@@ -354,7 +354,31 @@ endfunction
 vnoremap <silent> * :call VisualSearch('f')<CR>
 vnoremap <silent> # :call VisualSearch('b')<CR>
 
+function! MarkWindowSwap()
+    let g:markedWinNum = winnr()
+endfunction
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Moving around and window
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+function! DoWindowSwap()
+    "Mark destination
+    let curNum = winnr()
+    let curBuf = bufnr( "%" )
+    exe g:markedWinNum . "wincmd w"
+    "Switch to source and shuffle dest->source
+    let markedBuf = bufnr( "%" )
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' curBuf
+    "Switch to dest and shuffle source->dest
+    exe curNum . "wincmd w"
+    "Hide and open so that we aren't prompted and keep history
+    exe 'hide buf' markedBuf 
+endfunction
+
+nmap <silent> <leader>wmt :call MarkWindowSwap()<CR>
+nmap <silent> <leader>wmp :call DoWindowSwap()<CR>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Moving around and tabs
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -980,8 +1004,8 @@ let g:vimrc_loaded = 1
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " resize current buffer by +/- 5 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-nnoremap <w-left> :vertical resize -5<cr>
-nnoremap <w-down> :resize +5<cr>
-nnoremap <w-up> :resize -5<cr>
-nnoremap <w-right> :vertical resize +5<cr>
+nnoremap <C-W><C-left> :vertical resize -5<cr>
+nnoremap <C-W><C-down> :resize +5<cr>
+nnoremap <C-W><C-up> :resize -5<cr>
+nnoremap <C-W><C-right> :vertical resize +5<cr>
 
