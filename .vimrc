@@ -35,38 +35,38 @@ set history=400
 " Chinese
 " multi-encoding setting
 if has("multi_byte")
-  "set bomb 
-  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,sjis,euc-kr,ucs-2le,latin1 
-  " CJK environment detection and corresponding setting 
-  if v:lang =~ "^zh_CN" 
-    " Use cp936 to support GBK, euc-cn == gb2312 
-    set encoding=chinese 
-    set termencoding=chinese 
-    set fileencoding=chinese 
-  elseif v:lang =~ "^zh_TW" 
-    " cp950, big5 or euc-tw 
-    " Are they equal to each other? 
-    set encoding=taiwan 
-    set termencoding=taiwan 
-    set fileencoding=taiwan 
-  "elseif v:lang =~ "^ko" 
-  "  " Copied from someone's dotfile, untested 
-  "  set encoding=euc-kr 
-  "  set termencoding=euc-kr 
-  "  set fileencoding=euc-kr 
-  "elseif v:lang =~ "^ja_JP" 
-  "  " Copied from someone's dotfile, untested 
-  "  set encoding=euc-jp 
-  "  set termencoding=euc-jp 
-  "  set fileencoding=euc-jp 
-  endif 
-  " Detect UTF-8 locale, and replace CJK setting if needed 
-  if v:lang =~ "utf8$" || v:lang =~ "UTF-8$" 
-    set encoding=utf-8 
-    set termencoding=utf-8 
-    set fileencoding=utf-8 
-  endif 
-endif 
+  "set bomb
+  set fileencodings=ucs-bom,utf-8,cp936,gb18030,big5,euc-jp,sjis,euc-kr,ucs-2le,latin1
+  " CJK environment detection and corresponding setting
+  if v:lang =~ "^zh_CN"
+    " Use cp936 to support GBK, euc-cn == gb2312
+    set encoding=chinese
+    set termencoding=chinese
+    set fileencoding=chinese
+  elseif v:lang =~ "^zh_TW"
+    " cp950, big5 or euc-tw
+    " Are they equal to each other?
+    set encoding=taiwan
+    set termencoding=taiwan
+    set fileencoding=taiwan
+  "elseif v:lang =~ "^ko"
+  "  " Copied from someone's dotfile, untested
+  "  set encoding=euc-kr
+  "  set termencoding=euc-kr
+  "  set fileencoding=euc-kr
+  "elseif v:lang =~ "^ja_JP"
+  "  " Copied from someone's dotfile, untested
+  "  set encoding=euc-jp
+  "  set termencoding=euc-jp
+  "  set fileencoding=euc-jp
+  endif
+  " Detect UTF-8 locale, and replace CJK setting if needed
+  if v:lang =~ "utf8$" || v:lang =~ "UTF-8$"
+    set encoding=utf-8
+    set termencoding=utf-8
+    set fileencoding=utf-8
+  endif
+endif
 "if MySys() == "windows"
    "set encoding=utf-8
    "set langmenu=zh_CN.UTF-8
@@ -195,7 +195,7 @@ endif
 "Set font
 if MySys() == "linux"
   if has("gui_running")
-    set gfn=Courier\ New\ 14,Courier\ 12,Luxi\ Mono\ 12,
+    set gfn=Courier\ New\ 16,Courier\ 12,Luxi\ Mono\ 12,
           \DejaVu\ Sans\ Mono\ 12,Bitstream\ Vera\ Sans\ Mono\ 12,
           \SimSun\ 10,WenQuanYi\ Micro\ Hei\ Mono\ 10
   elseif has("x11")
@@ -214,11 +214,11 @@ if !exists("g:vimrc_loaded")
 "        set guioptions-=m
         set guioptions-=L
         set guioptions-=r
-        colorscheme wombat
+        colorscheme sonofobsidian
         "hi normal guibg=#294d4a
         set cursorline
     else
-        colorscheme wombat
+        colorscheme sonofobsidian
     endif " has
 endif " exists(...)
 
@@ -374,7 +374,7 @@ function! DoWindowSwap()
     "Switch to dest and shuffle source->dest
     exe curNum . "wincmd w"
     "Hide and open so that we aren't prompted and keep history
-    exe 'hide buf' markedBuf 
+    exe 'hide buf' markedBuf
 endfunction
 
 nmap <silent> <leader>wmt :call MarkWindowSwap()<CR>
@@ -584,7 +584,7 @@ set smarttab
    set wrap
 
    """"""""""""""""""""""""""""""
-   " Latex Setting 
+   " Latex Setting
    """"""""""""""""""""""""""""""
   " IMPORTANT: grep will sometimes skip displaying the file name if you
   " search in a singe file. This will confuse Latex-Suite. Set your grep
@@ -604,7 +604,7 @@ set smarttab
   " banned all latex folding
   :let Tex_FoldedSections=""
   :let Tex_FoldedEnvironments=""
-  :let Tex_FoldedMisc=""  
+  :let Tex_FoldedMisc=""
   " default output pdf file instead of dvi
   "let g:Tex_DefaultTargetFormat='pdf'
 
@@ -612,7 +612,7 @@ set smarttab
   " TIP: if you write your \label's as \label{fig:something}, then if you
   " type in \ref{fig: and press <C-n> you will automatically cycle through
   " all the figure labels. Very useful!
-  set iskeyword+=: 
+  set iskeyword+=:
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Spell checking
@@ -746,13 +746,13 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    let g:bufExplorerSplitVertSize = 35  " Split width
    let g:bufExplorerUseCurrentWindow=1  " Open in new window.
    let g:bufExplorerMaxHeight=25        " Max height
-   autocmd BufWinEnter \[Buf\ List\] setl nonumber   
+   autocmd BufWinEnter \[Buf\ List\] setl nonumber
    """"""""""""""""""""""""""""""
    " netrw setting
    """"""""""""""""""""""""""""""
    let g:netrw_winsize = 30
    nmap <silent> <leader>fe :Sexplore!<cr>
-   
+
    """"""""""""""""""""""""""""""
    " taglist setting
    """"""""""""""""""""""""""""""
@@ -764,7 +764,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
      let g:Tlist_Show_One_File = 1
      let Tlist_Exit_OnlyWindow = 1
      let Tlist_Use_Right_Window = 1
-     let Tlist_Show_Menu = 1 
+     let Tlist_Show_Menu = 1
      let Tlist_File_Fold_Auto_Close=1
      noremap <silent> <F3> <ESC> :TlistUpdate<cr>
      nmap <silent> <F8> <ESC> :Tlist<cr>
@@ -773,7 +773,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    " winmanager setting
    """"""""""""""""""""""""""""""
    let g:winManagerWindowLayout = "BufExplorer|FileExplorer"
-   let g:winManagerWidth = 20 
+   let g:winManagerWidth = 20
    let g:defaultExplorer = 0
    nmap <C-W><C-F> :FirstExplorerWindow<cr>
    nmap <C-W><C-B> :BottomExplorerWindow<cr>
@@ -838,7 +838,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    " showmarks setting
    """"""""""""""""""""""""""""""
    " Enable ShowMarks
-   let showmarks_enable =1 
+   let showmarks_enable =1
    " Show which marks
    let showmarks_include = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ"
    " Ignore help, quickfix, non-modifiable buffers
@@ -861,8 +861,8 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    " FeralToggleCommentify setting
    """"""""""""""""""""""""""""""
    let loaded_feraltogglecommentify = 1
-   "map <silent> <leader>tc :call ToggleCommentify()<CR>j 
-   "imap <M-c> <ESC>:call ToggleCommentify()<CR>j 
+   "map <silent> <leader>tc :call ToggleCommentify()<CR>j
+   "imap <M-c> <ESC>:call ToggleCommentify()<CR>j
 
    """"""""""""""""""""""""""""""
    " vimgdb setting
@@ -929,7 +929,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    """""""""""""""""""""""""""""""
    autocmd FileType c,cpp,xml  map <buffer> <leader><space> :make<cr>
    autocmd FileType c,cpp,tpp  setl foldmethod=syntax | setl fen
-   au FileType cpp,hpp,h set syntax=cpp 
+   au FileType cpp,hpp,h set syntax=cpp
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " MISC
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -954,7 +954,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
    vmap <silent> <leader>lv :lv /<c-r>=<sid>GetVisualSelection()<cr>/ %<cr>:lw<cr>
 
    " Fast diff
-   "cmap @vd vertical diffsplit 
+   "cmap @vd vertical diffsplit
    set diffopt+=vertical
 
    "Remove the Windows ^M
@@ -1002,7 +1002,7 @@ nmap <C-@>d :cs find d <C-R>=expand("<cword>")<CR><CR>
 let g:vimrc_loaded = 1
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" resize current buffer by +/- 5 
+" resize current buffer by +/- 5
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 nnoremap <C-W><C-left> :vertical resize -5<cr>
 nnoremap <C-W><C-down> :resize +5<cr>

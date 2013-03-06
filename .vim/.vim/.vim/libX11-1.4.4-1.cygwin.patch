@@ -1,0 +1,38 @@
+--- origsrc/libX11-1.4.4/CYGWIN-PATCHES/devel.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libX11-1.4.4/CYGWIN-PATCHES/devel.hint	2011-08-22 03:33:01.926936300 -0500
+@@ -0,0 +1,5 @@
++category: X11
++requires: xproto kbproto libxcb-devel libX11_6
++external-source: libX11
++sdesc: "X.Org X11 core library (development)"
++ldesc: "X.Org X11 core library"
+--- origsrc/libX11-1.4.4/CYGWIN-PATCHES/runtime.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libX11-1.4.4/CYGWIN-PATCHES/runtime.hint	2011-08-22 03:33:01.928936500 -0500
+@@ -0,0 +1,5 @@
++category: X11
++requires: libxcb1
++external-source: libX11
++sdesc: "X.Org X11 core library (runtime)"
++ldesc: "X.Org X11 core library"
+--- origsrc/libX11-1.4.4/CYGWIN-PATCHES/setup.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libX11-1.4.4/CYGWIN-PATCHES/setup.hint	2011-08-22 03:33:01.930936800 -0500
+@@ -0,0 +1,3 @@
++category: X11
++sdesc: "X.Org X11 core library (source)"
++ldesc: "X.Org X11 core library"
+--- origsrc/libX11-1.4.4/CYGWIN-PATCHES/xcb-devel.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libX11-1.4.4/CYGWIN-PATCHES/xcb-devel.hint	2011-08-22 03:33:01.932437000 -0500
+@@ -0,0 +1,5 @@
++category: X11
++requires: libX11-xcb1 libX11-devel
++external-source: libX11
++sdesc: "X.Org X11 core library (XCB development)"
++ldesc: "X.Org X11 core library"
+--- origsrc/libX11-1.4.4/CYGWIN-PATCHES/xcb.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libX11-1.4.4/CYGWIN-PATCHES/xcb.hint	2011-08-22 03:33:01.933937200 -0500
+@@ -0,0 +1,5 @@
++category: X11
++requires: 
++external-source: libX11
++sdesc: "X.Org X11 core library (XCB runtime)"
++ldesc: "X.Org X11 core library"

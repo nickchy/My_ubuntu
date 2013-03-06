@@ -1,0 +1,53 @@
+--- origsrc/libiodbc-3.52.7/CYGWIN-PATCHES/iodbcadm-gtk.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libiodbc-3.52.7/CYGWIN-PATCHES/iodbcadm-gtk.hint	2010-06-08 20:38:02.525303100 -0500
+@@ -0,0 +1,8 @@
++category: Database
++requires: libgcc1 libglib2.0_0 libgtk2.0_0 libiodbc2
++external-source: libiodbc
++sdesc: "ODBC implementation for *NIX (GUI administrator)"
++ldesc: "Independent Open DataBase Connectivity (iODBC) is an Open Source 
++platform-independent implementation of both Microsoft's ODBC universal 
++data access framework and the X/Open SQL Call Level Interface 
++specifications."
+--- origsrc/libiodbc-3.52.7/CYGWIN-PATCHES/iodbctest.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libiodbc-3.52.7/CYGWIN-PATCHES/iodbctest.hint	2010-06-08 20:38:02.529303300 -0500
+@@ -0,0 +1,8 @@
++category: Database
++requires: libgcc1
++external-source: libiodbc
++sdesc: "ODBC implementation for *NIX (test programs)"
++ldesc: "Independent Open DataBase Connectivity (iODBC) is an Open Source 
++platform-independent implementation of both Microsoft's ODBC universal 
++data access framework and the X/Open SQL Call Level Interface 
++specifications."
+--- origsrc/libiodbc-3.52.7/CYGWIN-PATCHES/libiodbc.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libiodbc-3.52.7/CYGWIN-PATCHES/libiodbc.hint	2010-06-08 20:38:02.533303500 -0500
+@@ -0,0 +1,6 @@
++category: Database
++sdesc: "ODBC implementation for *NIX (sources)"
++ldesc: "Independent Open DataBase Connectivity (iODBC) is an Open Source 
++platform-independent implementation of both Microsoft's ODBC universal 
++data access framework and the X/Open SQL Call Level Interface 
++specifications."
+--- origsrc/libiodbc-3.52.7/CYGWIN-PATCHES/libiodbc2.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libiodbc-3.52.7/CYGWIN-PATCHES/libiodbc2.hint	2010-06-08 20:38:02.538303800 -0500
+@@ -0,0 +1,8 @@
++category: Database
++requires: libgcc1
++external-source: libiodbc
++sdesc: "ODBC implementation for *NIX (runtime)"
++ldesc: "Independent Open DataBase Connectivity (iODBC) is an Open Source 
++platform-independent implementation of both Microsoft's ODBC universal 
++data access framework and the X/Open SQL Call Level Interface 
++specifications."
+--- origsrc/libiodbc-3.52.7/CYGWIN-PATCHES/libiodbc-devel.hint	1969-12-31 18:00:00.000000000 -0600
++++ src/libiodbc-3.52.7/CYGWIN-PATCHES/libiodbc-devel.hint	2010-06-08 20:38:02.543304100 -0500
+@@ -0,0 +1,8 @@
++category: Database
++requires: libiodbc2
++external-source: libiodbc
++sdesc: "ODBC implementation for *NIX (development)"
++ldesc: "Independent Open DataBase Connectivity (iODBC) is an Open Source 
++platform-independent implementation of both Microsoft's ODBC universal 
++data access framework and the X/Open SQL Call Level Interface 
++specifications."

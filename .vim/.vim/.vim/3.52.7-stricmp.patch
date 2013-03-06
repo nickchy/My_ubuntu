@@ -1,0 +1,20 @@
+<string.h> provides #define stricmp strcasecmp for Windows compatibility
+
+--- origsrc/libiodbc-3.52.7/iodbc/info.c	2009-08-30 06:00:08.000000000 -0500
++++ src/libiodbc-3.52.7/iodbc/info.c	2010-06-08 20:22:19.230349700 -0500
+@@ -108,6 +108,7 @@
+ #define MAX_ENTRIES		1024
+ 
+ 
++#ifndef stricmp
+ static int
+ stricmp (const char *s1, const char *s2)
+ {
+@@ -122,6 +122,7 @@ stricmp (const char *s1, const char *s2)
+     }
+   return (*s2) ? -1 : 0;
+ }
++#endif
+ 
+ 
+ static int

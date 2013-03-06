@@ -53,3 +53,5 @@ fi
  if [ -d "/lib/R/share/texmf" ]; then
    TEXMF={!!/lib/R/share/texmf,!!/usr/share/texmf}
  fi
+
+ test -r ~/algs4/bin/config.sh && source ~/algs4/bin/config.sh

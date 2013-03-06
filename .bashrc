@@ -59,3 +59,4 @@ export PERL_MB_OPT="--install_base /home/nick/perl5";
 export PERL_MM_OPT="INSTALL_BASE=/home/nick/perl5";
 export PERL5LIB="/home/nick/perl5/lib/perl5/x86_64-linux-gnu-thread-multi:/home/nick/perl5/lib/perl5";
 export PATH="/home/nick/perl5/bin:$PATH";
+export LD_LIBRARY_PATH="/home/nick/CLRS/util:$LD_LIBRARY_PATH";
